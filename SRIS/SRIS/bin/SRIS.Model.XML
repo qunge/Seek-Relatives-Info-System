@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SRIS.Model</name>
+    </assembly>
+    <members>
+        <member name="T:SRIS.Model.RegisterInfo">
+            <summary>
+            案例登记信息
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.RegisterInfoId">
+            <summary>
+            案例登记信息ID
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.CaseCode">
+            <summary>
+            案例编号
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.SRTypeId">
+            <summary>
+            寻亲类别
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.BeSeekerName">
+            <summary>
+            被寻人姓名
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.GetTaskDateTime">
+            <summary>
+            领任务时间
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.RegisterLink">
+            <summary>
+            登记链接
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.PostLink">
+            <summary>
+            发帖链接
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.LinkManPhone">
+            <summary>
+            联系人电话
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.QQ">
+            <summary>
+            联系人QQ
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.WeiXin">
+            <summary>
+            联系人微信
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.IsReturnTask">
+            <summary>
+            是否退任务(0:未退任务，1：已退任务)
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.ReturnTaskDateTime">
+            <summary>
+            退任务时间
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.IsBBHJ">
+            <summary>
+            是否引导去宝贝回家登记
+            </summary>]
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.Volunteer">
+            <summary>
+            跟进志愿者
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:SRIS.Model.SRType">
+            <summary>
+            寻亲类别
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.SRType.SRTypeId">
+            <summary>
+            寻亲类别ID
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.SRType.SRTypeName">
+            <summary>
+            寻亲类别名称
+            </summary>
+        </member>
+        <member name="T:SRIS.Model.UserInfo">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.UserInfo.UserInfoId">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.UserInfo.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.UserInfo.PassWord">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.UserInfo.Salt">
+            <summary>
+            盐值
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.UserInfo.CreateDateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+    </members>
+</doc>

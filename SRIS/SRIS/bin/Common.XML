@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Common</name>
+    </assembly>
+    <members>
+        <member name="T:Common.Common">
+            <summary>
+            常用方法
+            </summary>
+        </member>
+        <member name="M:Common.Common.GetSalt">
+            <summary>
+            获取盐值
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

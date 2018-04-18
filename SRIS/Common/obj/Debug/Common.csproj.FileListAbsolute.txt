@@ -1,0 +1,8 @@
+E:\SRIS\Seek-Relatives-Info-System\SRIS\Common\bin\Debug\Common.dll
+E:\SRIS\Seek-Relatives-Info-System\SRIS\Common\bin\Debug\Common.pdb
+E:\SRIS\Seek-Relatives-Info-System\SRIS\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+E:\SRIS\Seek-Relatives-Info-System\SRIS\Common\obj\Debug\Common.dll
+E:\SRIS\Seek-Relatives-Info-System\SRIS\Common\obj\Debug\Common.pdb
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\Common.XML
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\Common.dll
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\Common.pdb

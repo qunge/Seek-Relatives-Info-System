@@ -1,0 +1,6 @@
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.SPI.XML
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.SPI.dll
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.SPI.pdb
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.SPI\obj\Debug\SRIS.SPI.dll
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.SPI\obj\Debug\SRIS.SPI.pdb
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.SPI\obj\Debug\SRIS.SPI.csprojResolveAssemblyReference.cache

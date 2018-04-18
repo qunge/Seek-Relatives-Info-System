@@ -1,0 +1,104 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+
+namespace SRIS.Model
+{
+    /// <summary>
+    /// 案例登记信息
+    /// </summary>
+    public class RegisterInfo
+    {
+        /// <summary>
+        /// 案例登记信息ID
+        /// </summary>
+        [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]  // Id字段的值由用户生成而不是由数据库生成
+        public string RegisterInfoId { get; set; }
+
+        /// <summary>
+        /// 案例编号
+        /// </summary>
+        [Required]
+        [StringLength(50)]
+        public string CaseCode { get; set; }
+
+        /// <summary>
+        /// 寻亲类别
+        /// </summary>
+        public SRType SRTypeId { get; set; }
+
+        /// <summary>
+        /// 标题
+        /// </summary>
+        [Required]
+        [StringLength(50)]
+        public string Title { get; set; }
+        /// <summary>
+        /// 被寻人姓名
+        /// </summary>
+        [Required]
+        [StringLength(50)]
+        public string BeSeekerName { get; set; }
+        /// <summary>
+        /// 领任务时间
+        /// </summary>
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public string GetTaskDateTime { get; set; }
+        /// <summary>
+        /// 登记链接
+        /// </summary>
+        [Required]
+        public string RegisterLink { get; set; }
+        /// <summary>
+        /// 发帖链接
+        /// </summary>
+        [Required]
+        public string PostLink { get; set; }
+        /// <summary>
+        /// 联系人电话
+        /// </summary>
+        [Required]
+        public string LinkManPhone { get; set; }
+        /// <summary>
+        /// 联系人QQ
+        /// </summary>
+        public string QQ { get; set; }
+        /// <summary>
+        /// 联系人微信
+        /// </summary>
+        public string WeiXin { get; set; }
+        /// <summary>
+        /// 是否退任务(0:未退任务，1：已退任务)
+        /// </summary>
+        public int IsReturnTask { get; set; }
+        /// <summary>
+        /// 退任务时间
+        /// </summary>
+        public DateTime ReturnTaskDateTime { get; set; }
+        /// <summary>
+        /// 是否引导去宝贝回家登记
+        /// </summary>]
+        public int IsBBHJ { get; set; }
+        /// <summary>
+        /// 跟进志愿者
+        /// </summary>
+        [Required]
+        [StringLength(50)]
+        public string Volunteer { get; set; }
+        /// <summary>
+        /// 备注
+        /// </summary>
+        [Required]
+        public string Remarks { get; set; }
+
+        public UserInfo UserInfo { get; set; }
+    }
+}
