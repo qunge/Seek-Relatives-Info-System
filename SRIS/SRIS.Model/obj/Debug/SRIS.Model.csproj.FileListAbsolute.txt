@@ -1,6 +1,0 @@
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.Model.XML
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.Model.dll
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.Model.pdb
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.Model\obj\Debug\SRIS.Model.dll
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.Model\obj\Debug\SRIS.Model.pdb
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.Model.dll.config

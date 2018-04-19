@@ -1,7 +1,0 @@
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.BLL.XML
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.BLL.dll
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.BLL.pdb
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.BLL\obj\Debug\SRIS.BLL.dll
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.BLL\obj\Debug\SRIS.BLL.pdb
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.BLL.dll.config
-E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.BLL\obj\Debug\SRIS.BLL.csprojResolveAssemblyReference.cache
