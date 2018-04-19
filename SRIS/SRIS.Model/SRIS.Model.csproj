@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BBHJInfo.cs" />
+    <Compile Include="LinkMan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterInfo.cs" />
     <Compile Include="SRType.cs" />

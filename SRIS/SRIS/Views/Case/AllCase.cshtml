@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "全部案例";
+    Layout = "~/Views/Shared/_BlankPage.cshtml";
+}
+<body>
+    <div class="main-content">
+        <div class="main-content-inner">
+            <!-- #section:basics/content.breadcrumbs -->
+            <div class="breadcrumbs" id="breadcrumbs">
+                <script type="text/javascript">
+                    try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+                </script>
+                <ul class="breadcrumb">
+                    <li>
+                        <i class="ace-icon fa fa-home home-icon"></i>
+                        @*<a href="#">首页</a>*@
+                        @Html.ActionLink("首页","Index","Home")
+                    </li>
+                    <li>
+                            <a href="#">全部案例</a>
+                        </li>
+                        @*<li class="active">Blank Page</li>*@
+                </ul><!-- /.breadcrumb -->
+                <!-- #section:basics/content.searchbox -->
+                <div class="nav-search" id="nav-search">
+                    <form class="form-search">
+                        <span class="input-icon">
+                            <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                            <i class="ace-icon fa fa-search nav-search-icon"></i>
+                        </span>
+                    </form>
+                </div><!-- /.nav-search -->
+                <!-- /section:basics/content.searchbox -->
+            </div>
+            <div class="page-content">
+                <!-- /section:settings.box -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div style="margin:10px;">
+                                <button id="btn_Create" class="layui-btn">新建</button>
+                            <table class="layui-hide" id="test"></table>
+                        </div>
+                        <!-- PAGE CONTENT ENDS -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+    <script>
+        layui.use('table', function () {
+            var table = layui.table;
+
+            table.render({
+                elem: '#test'
+              , url: '/Case/GetAllCase/'
+              , cols: [[
+                { field: 'CaseCode', width: 80, title: '案例编号', sort: true }
+                , { field: 'Title', width: 80, title: '标题' }
+                , { field: 'BeSeekerName', width: 80, title: '被寻人姓名', sort: true }
+                , { field: 'GetTaskDateTime', width: 80, title: '领任务时间' }
+                , { field: 'RegisterLink', width: 80, title: '登记链接' }
+                , { field: 'PostLink', width: 80, title: '发帖链接', sort: true }
+                , { field: 'DNAState', width: 80, title: 'DNA状态', sort: true }
+                , { field: 'IsReturnTask', width: 80, title: '是否退任务' }
+                , { field: 'ReturnTaskDateTime', width: 135, title: '退任务时间', sort: true }
+              ]]
+              , page: true
+            });
+        });
+
+        $(function () {
+            $("#btn_Create").click(function () {
+                window.location.href = "/Case/CreateCase";
+            });
+        })
+
+    </script>
+
+</body>
+
+
+
+
+
+
+

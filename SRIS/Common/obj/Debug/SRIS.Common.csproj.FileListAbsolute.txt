@@ -3,4 +3,3 @@ E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.Common.dll
 E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.Common.pdb
 E:\SRIS\Seek-Relatives-Info-System\SRIS\Common\obj\Debug\SRIS.Common.dll
 E:\SRIS\Seek-Relatives-Info-System\SRIS\Common\obj\Debug\SRIS.Common.pdb
-E:\SRIS\Seek-Relatives-Info-System\SRIS\Common\obj\Debug\SRIS.Common.csprojResolveAssemblyReference.cache

@@ -28,6 +28,16 @@ namespace SRIS.Framework
         /// </summary>
         public DbSet<SRType> SRTypes { get; set; }
 
+        /// <summary>
+        /// 宝贝回家信息表
+        /// </summary>
+        public DbSet<BBHJInfo> BBHJInfos { get; set; }
+
+        /// <summary>
+        /// 联系人信息表
+        /// </summary>
+        public DbSet<LinkMan> LinkMans { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

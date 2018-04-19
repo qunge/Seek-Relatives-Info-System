@@ -65,6 +65,18 @@
     <Compile Include="Migrations\201804150512345_AddTable.Designer.cs">
       <DependentUpon>201804150512345_AddTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804190356239_CreateNewTable.cs" />
+    <Compile Include="Migrations\201804190356239_CreateNewTable.Designer.cs">
+      <DependentUpon>201804190356239_CreateNewTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804190719532_updatesdfs.cs" />
+    <Compile Include="Migrations\201804190719532_updatesdfs.Designer.cs">
+      <DependentUpon>201804190719532_updatesdfs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804190856045_updatelink.cs" />
+    <Compile Include="Migrations\201804190856045_updatelink.Designer.cs">
+      <DependentUpon>201804190856045_updatelink.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SRISContext.cs" />
@@ -79,6 +91,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804150512345_AddTable.resx">
       <DependentUpon>201804150512345_AddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804190356239_CreateNewTable.resx">
+      <DependentUpon>201804190356239_CreateNewTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804190719532_updatesdfs.resx">
+      <DependentUpon>201804190719532_updatesdfs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804190856045_updatelink.resx">
+      <DependentUpon>201804190856045_updatelink.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

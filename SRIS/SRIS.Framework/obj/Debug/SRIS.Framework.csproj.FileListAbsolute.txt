@@ -8,3 +8,6 @@ E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS\bin\SRIS.Framework.dll.config
 E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.Framework\obj\Debug\SRIS.Framework.Migrations.createtable.resources
 E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.Framework\obj\Debug\SRIS.Framework.csproj.GenerateResource.Cache
 E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.Framework\obj\Debug\SRIS.Framework.Migrations.AddTable.resources
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.Framework\obj\Debug\SRIS.Framework.Migrations.CreateNewTable.resources
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.Framework\obj\Debug\SRIS.Framework.Migrations.updatesdfs.resources
+E:\SRIS\Seek-Relatives-Info-System\SRIS\SRIS.Framework\obj\Debug\SRIS.Framework.Migrations.updatelink.resources

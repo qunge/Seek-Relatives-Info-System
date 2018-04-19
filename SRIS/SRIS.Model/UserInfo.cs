@@ -49,6 +49,9 @@ namespace SRIS.Model
         [DataType(DataType.DateTime)]
         public DateTime CreateDateTime { get; set; }
 
+        /// <summary>
+        /// 志愿者跟进的案例
+        /// </summary>
         public ICollection<RegisterInfo> RegisterInfo { get; set; }
     }
 }

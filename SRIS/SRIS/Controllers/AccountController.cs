@@ -39,7 +39,7 @@ namespace SRIS.Controllers
                     ViewBag.Message = "登录成功";
                     Session["userName"] = userInfoModel.UserName;
                     Session["userId"] = userInfoModel.UserInfoId;
-                    return RedirectToAction("Index", "Case");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -92,5 +92,14 @@ namespace SRIS.Controllers
                 return Json(new { state = false, message = ex.Message });
             }
         }
-	}
+
+        public ActionResult Logout()
+        {
+            // 清空Session
+            Session["userName"] = "";
+            Session["userId"] = "";
+            return View("Login");
+        }
+
+    }
 }

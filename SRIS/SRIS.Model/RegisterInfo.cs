@@ -29,10 +29,7 @@ namespace SRIS.Model
         [StringLength(50)]
         public string CaseCode { get; set; }
 
-        /// <summary>
-        /// 寻亲类别
-        /// </summary>
-        public SRType SRTypeId { get; set; }
+        
 
         /// <summary>
         /// 标题
@@ -51,7 +48,7 @@ namespace SRIS.Model
         /// </summary>
         [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public string GetTaskDateTime { get; set; }
+        public DateTime GetTaskDateTime { get; set; }
         /// <summary>
         /// 登记链接
         /// </summary>
@@ -60,21 +57,12 @@ namespace SRIS.Model
         /// <summary>
         /// 发帖链接
         /// </summary>
-        [Required]
         public string PostLink { get; set; }
+
         /// <summary>
-        /// 联系人电话
+        /// DNA状态(0:未采血)
         /// </summary>
-        [Required]
-        public string LinkManPhone { get; set; }
-        /// <summary>
-        /// 联系人QQ
-        /// </summary>
-        public string QQ { get; set; }
-        /// <summary>
-        /// 联系人微信
-        /// </summary>
-        public string WeiXin { get; set; }
+        public int DNAState { get; set; }
         /// <summary>
         /// 是否退任务(0:未退任务，1：已退任务)
         /// </summary>
@@ -82,23 +70,61 @@ namespace SRIS.Model
         /// <summary>
         /// 退任务时间
         /// </summary>
-        public DateTime ReturnTaskDateTime { get; set; }
+        public DateTime? ReturnTaskDateTime { get; set; }
+
+        /// <summary>
+        /// 退任务原因
+        /// </summary>
+        [StringLength(50)]
+        public string ReturnReason { get; set; }
         /// <summary>
         /// 是否引导去宝贝回家登记
         /// </summary>]
-        public int IsBBHJ { get; set; }
-        /// <summary>
-        /// 跟进志愿者
-        /// </summary>
-        [Required]
-        [StringLength(50)]
-        public string Volunteer { get; set; }
+        public string IsBBHJ { get; set; }
+        
         /// <summary>
         /// 备注
         /// </summary>
         [Required]
         public string Remarks { get; set; }
 
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        [Required]
+        public DateTime CreateDateTime { get; set; }
+
+        /// <summary>
+        /// 跟进志愿者
+        /// </summary>
+        [Required]
+        [StringLength(50)]
+        public string UserInfoId { get; set; }
+
+        /// <summary>
+        /// 联系人信息
+        /// </summary>
+        public string LinkManId { get; set; }
+
+        /// <summary>
+        /// 寻亲类别
+        /// </summary>
+        public string SRTypeId { get; set; }
+
+        /// <summary>
+        /// 志愿者
+        /// </summary>
         public UserInfo UserInfo { get; set; }
+
+        /// <summary>
+        /// 联系人信息
+        /// </summary>
+        public virtual LinkMan LinkMan { get; set; }
+
+        /// <summary>
+        /// 寻亲类别
+        /// </summary>
+        public SRType SRType { get; set; }
+        
     }
 }
