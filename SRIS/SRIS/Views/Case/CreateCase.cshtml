@@ -4,6 +4,7 @@
     ViewBag.Title = "创建案例";
     Layout = "~/Views/Shared/_BlankPage.cshtml";
 }
+
 <body>
     <div class="main-content">
         <div class="main-content-inner">
@@ -41,7 +42,7 @@
                 <div class="layui-tab layui-tab-card">
                     <ul class="layui-tab-title">
                         <li class="layui-this">案例信息</li>
-                        <li>联系人信息</li>
+                        @*<li>联系人信息</li>*@
                     </ul>
                     <div class="layui-tab-content">
                         <div class="layui-tab-item layui-show">
@@ -49,7 +50,7 @@
                             <div class="row">
                                 <div class="col-xs-12">
                                     <!-- PAGE CONTENT BEGINS -->
-                                    @using (Html.BeginForm())
+                                    @using (Html.BeginForm("CreateCase", "Case",FormMethod.Post))
                                     {
                                         @Html.AntiForgeryToken()
 
@@ -59,17 +60,17 @@
 
                                             <div class="layui-form-item">
                                                 <div class="layui-inline">
-                                                    @Html.LabelFor(model => model.RegisterInfoId, new { @class = "layui-form-label" })
+                                                    @Html.LabelFor(model => model.CaseCode, htmlAttributes: new { @class = "layui-form-label" })
                                                     <div class="layui-input-inline">
-                                                        @Html.EditorFor(model => model.RegisterInfoId, new { @class = "layui-input" })
-                                                        @Html.ValidationMessageFor(model => model.RegisterInfoId)
+                                                        @Html.EditorFor(model => model.CaseCode, new { @class = "layui-input" })
+                                                        @Html.ValidationMessageFor(model => model.CaseCode)
                                                     </div>
                                                 </div>
                                                 <div class="layui-inline">
-                                                    @Html.LabelFor(model => model.CaseCode, htmlAttributes: new { @class = "layui-form-label" })
+                                                    @Html.LabelFor(model => model.SRTypeId, htmlAttributes: new { @class = "layui-form-label" })
                                                     <div class="layui-input-inline">
-                                                        @Html.EditorFor(model => model.CaseCode,new { @class = "layui-input" })
-                                                        @Html.ValidationMessageFor(model => model.CaseCode)
+                                                        @Html.DropDownListFor(model => model.SRTypeId, ViewBag.select as SelectList, "==请选择==")
+                                                        @Html.ValidationMessageFor(model => model.SRTypeId)
                                                     </div>
                                                 </div>
                                             </div>
@@ -104,57 +105,6 @@
                                                     <div class="layui-input-inline">
                                                         @Html.EditorFor(model => model.RegisterLink, new { @class = "layui-input" })
                                                         @Html.ValidationMessageFor(model => model.RegisterLink)
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="layui-form-item">
-                                                <div class="layui-inline">
-                                                    @Html.LabelFor(model => model.PostLink, new { @class = "layui-form-label" })
-                                                    <div class="layui-input-inline">
-                                                        @Html.EditorFor(model => model.PostLink, new { @class = "layui-input" })
-                                                        @Html.ValidationMessageFor(model => model.PostLink)
-                                                    </div>
-                                                </div>
-                                                <div class="layui-inline">
-                                                    @Html.LabelFor(model => model.DNAState, htmlAttributes: new { @class = "layui-form-label" })
-                                                    <div class="layui-input-inline">
-                                                        @Html.EditorFor(model => model.DNAState, new { @class = "layui-input" })
-                                                        @Html.ValidationMessageFor(model => model.DNAState)
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="layui-form-item">
-                                                <div class="layui-inline">
-                                                    @Html.LabelFor(model => model.IsReturnTask, new { @class = "layui-form-label" })
-                                                    <div class="layui-input-inline">
-                                                        @Html.EditorFor(model => model.IsReturnTask, new { @class = "layui-input" })
-                                                        @Html.ValidationMessageFor(model => model.IsReturnTask)
-                                                    </div>
-                                                </div>
-                                                <div class="layui-inline">
-                                                    @Html.LabelFor(model => model.ReturnTaskDateTime, htmlAttributes: new { @class = "layui-form-label" })
-                                                    <div class="layui-input-inline">
-                                                        @Html.EditorFor(model => model.ReturnTaskDateTime, new { @class = "layui-input" })
-                                                        @Html.ValidationMessageFor(model => model.ReturnTaskDateTime)
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="layui-form-item">
-                                                <div class="layui-inline">
-                                                    @Html.LabelFor(model => model.ReturnReason, new { @class = "layui-form-label" })
-                                                    <div class="layui-input-inline">
-                                                        @Html.EditorFor(model => model.ReturnReason, new { @class = "layui-input" })
-                                                        @Html.ValidationMessageFor(model => model.ReturnReason)
-                                                    </div>
-                                                </div>
-                                                <div class="layui-inline">
-                                                    @Html.LabelFor(model => model.IsBBHJ, htmlAttributes: new { @class = "layui-form-label" })
-                                                    <div class="layui-input-inline">
-                                                        @Html.EditorFor(model => model.IsBBHJ, new { @class = "layui-input" })
-                                                        @Html.ValidationMessageFor(model => model.IsBBHJ)
                                                     </div>
                                                 </div>
                                             </div>

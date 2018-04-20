@@ -20,7 +20,7 @@ namespace SRIS.Model
         /// </summary>
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]  // Id字段的值由用户生成而不是由数据库生成
-        public string RegisterInfoId { get; set; }
+        public string RegisterInfoID { get; set; }
 
         /// <summary>
         /// 案例编号
@@ -28,8 +28,6 @@ namespace SRIS.Model
         [Required]
         [StringLength(50)]
         public string CaseCode { get; set; }
-
-        
 
         /// <summary>
         /// 标题
@@ -46,7 +44,7 @@ namespace SRIS.Model
         /// <summary>
         /// 领任务时间
         /// </summary>
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime GetTaskDateTime { get; set; }
         /// <summary>
@@ -62,7 +60,7 @@ namespace SRIS.Model
         /// <summary>
         /// DNA状态(0:未采血)
         /// </summary>
-        public int DNAState { get; set; }
+        public int? DNAState { get; set; }
         /// <summary>
         /// 是否退任务(0:未退任务，1：已退任务)
         /// </summary>
@@ -85,7 +83,6 @@ namespace SRIS.Model
         /// <summary>
         /// 备注
         /// </summary>
-        [Required]
         public string Remarks { get; set; }
 
         /// <summary>
@@ -99,17 +96,12 @@ namespace SRIS.Model
         /// </summary>
         [Required]
         [StringLength(50)]
-        public string UserInfoId { get; set; }
-
-        /// <summary>
-        /// 联系人信息
-        /// </summary>
-        public string LinkManId { get; set; }
+        public string UserInfoID { get; set; }
 
         /// <summary>
         /// 寻亲类别
         /// </summary>
-        public string SRTypeId { get; set; }
+        public string SRTypeID { get; set; }
 
         /// <summary>
         /// 志愿者

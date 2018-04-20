@@ -18,12 +18,12 @@ namespace SRIS.Model
         /// </summary>
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]  // Id字段的值由用户生成而不是由数据库生成
-        public string BBHJInfoId { get; set; }
+        public string BBHJInfoID { get; set; }
 
         /// <summary>
         /// 登记案例
         /// </summary>
-        public string RegisterInfoId { get; set; }
+        public string RegisterInfoID { get; set; }
 
         /// <summary>
         /// 宝贝回家登记编号

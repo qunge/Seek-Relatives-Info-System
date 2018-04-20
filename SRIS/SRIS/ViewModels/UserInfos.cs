@@ -14,7 +14,7 @@ namespace SRIS.ViewModels
         /// </summary>
         [Required]
         [Display(Name = "用户名")]
-        [RegularExpression(@"^[A-Za-z0-9]\w{1,24}$", ErrorMessage = "用户名必须以大写字母、小写字母、数字组成，长度在2-25之间")]
+        [RegularExpression(@"^[A-Za-z0-9\u4e00-\u9fa5]+$", ErrorMessage = "用户名必须是汉字、字母或数字")]
         [StringLength(25)]
         public string UserName { get; set; }
 

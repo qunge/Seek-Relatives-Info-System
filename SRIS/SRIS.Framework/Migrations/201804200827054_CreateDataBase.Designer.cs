@@ -7,13 +7,13 @@ namespace SRIS.Framework.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreateNewTable : IMigrationMetadata
+    public sealed partial class CreateDataBase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateNewTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDataBase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804190356239_CreateNewTable"; }
+            get { return "201804200827054_CreateDataBase"; }
         }
         
         string IMigrationMetadata.Source

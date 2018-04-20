@@ -57,25 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201804150124374_createtable.cs" />
-    <Compile Include="Migrations\201804150124374_createtable.Designer.cs">
-      <DependentUpon>201804150124374_createtable.cs</DependentUpon>
+    <Compile Include="Migrations\201804200827054_CreateDataBase.cs" />
+    <Compile Include="Migrations\201804200827054_CreateDataBase.Designer.cs">
+      <DependentUpon>201804200827054_CreateDataBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804150512345_AddTable.cs" />
-    <Compile Include="Migrations\201804150512345_AddTable.Designer.cs">
-      <DependentUpon>201804150512345_AddTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804190356239_CreateNewTable.cs" />
-    <Compile Include="Migrations\201804190356239_CreateNewTable.Designer.cs">
-      <DependentUpon>201804190356239_CreateNewTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804190719532_updatesdfs.cs" />
-    <Compile Include="Migrations\201804190719532_updatesdfs.Designer.cs">
-      <DependentUpon>201804190719532_updatesdfs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804190856045_updatelink.cs" />
-    <Compile Include="Migrations\201804190856045_updatelink.Designer.cs">
-      <DependentUpon>201804190856045_updatelink.cs</DependentUpon>
+    <Compile Include="Migrations\201804200904269_updatesdf.cs" />
+    <Compile Include="Migrations\201804200904269_updatesdf.Designer.cs">
+      <DependentUpon>201804200904269_updatesdf.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,20 +74,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804150124374_createtable.resx">
-      <DependentUpon>201804150124374_createtable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804200827054_CreateDataBase.resx">
+      <DependentUpon>201804200827054_CreateDataBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804150512345_AddTable.resx">
-      <DependentUpon>201804150512345_AddTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804190356239_CreateNewTable.resx">
-      <DependentUpon>201804190356239_CreateNewTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804190719532_updatesdfs.resx">
-      <DependentUpon>201804190719532_updatesdfs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804190856045_updatelink.resx">
-      <DependentUpon>201804190856045_updatelink.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804200904269_updatesdf.resx">
+      <DependentUpon>201804200904269_updatesdf.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

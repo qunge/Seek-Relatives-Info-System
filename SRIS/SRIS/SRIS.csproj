@@ -426,6 +426,15 @@
     <Content Include="Content\docs\sections\plugins\tables.html" />
     <Content Include="Content\docs\sections\plugins\tools.html" />
     <Content Include="Content\docs\sections\settings\index.html" />
+    <Content Include="Content\layer\layer.js" />
+    <Content Include="Content\layer\mobile\layer.js" />
+    <Content Include="Content\layer\mobile\need\layer.css" />
+    <Content Include="Content\layer\theme\default\icon-ext.png" />
+    <Content Include="Content\layer\theme\default\icon.png" />
+    <Content Include="Content\layer\theme\default\layer.css" />
+    <Content Include="Content\layer\theme\default\loading-0.gif" />
+    <Content Include="Content\layer\theme\default\loading-1.gif" />
+    <Content Include="Content\layer\theme\default\loading-2.gif" />
     <Content Include="Content\layui\css\layui.css" />
     <Content Include="Content\layui\css\layui.mobile.css" />
     <Content Include="Content\layui\css\modules\code.css" />
@@ -772,6 +781,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Case\AllCase.cshtml" />
     <Content Include="Views\Case\CreateCase.cshtml" />
+    <Content Include="Views\Case\EditCase.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

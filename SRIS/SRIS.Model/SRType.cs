@@ -14,7 +14,7 @@ namespace SRIS.Model
         /// <summary>
         /// 寻亲类别ID
         /// </summary>
-        public int SRTypeId { get; set; }
+        public int SRTypeID { get; set; }
 
         /// <summary>
         /// 寻亲类别名称

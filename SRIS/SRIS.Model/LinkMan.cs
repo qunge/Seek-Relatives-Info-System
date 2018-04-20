@@ -18,7 +18,7 @@ namespace SRIS.Model
         /// </summary>
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]  // Id字段的值由用户生成而不是由数据库生成
-        public string LinkManId { get; set; }
+        public string LinkManID { get; set; }
 
         /// <summary>
         /// 联系人姓名
@@ -96,10 +96,16 @@ namespace SRIS.Model
         /// </summary>
         public string Remark { get; set; }
 
-        ///// <summary>
-        ///// 案例登记信息
-        ///// </summary>
-        //public virtual RegisterInfo RegisterInfo { get; set; }
+        /// <summary>
+        /// 登记案例信息
+        /// </summary>
+        [Key,ForeignKey("RegisterInfo")]
+        public string RegisterInfoId { get; set; }
+
+        /// <summary>
+        /// 案例登记信息
+        /// </summary>
+        public virtual RegisterInfo RegisterInfo { get; set; }
 
         /// <summary>
         /// 创建时间

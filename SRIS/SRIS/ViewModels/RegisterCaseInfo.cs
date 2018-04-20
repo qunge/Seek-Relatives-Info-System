@@ -21,7 +21,6 @@ namespace SRIS.ViewModels
         /// <summary>
         /// 案例登记信息ID
         /// </summary>
-        [Required]
         [Display(Name = "案例登记信息ID")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]  // Id字段的值由用户生成而不是由数据库生成
         public string RegisterInfoId { get; set; }
@@ -33,6 +32,13 @@ namespace SRIS.ViewModels
         [StringLength(50)]
         [Display(Name = "案例编号")]
         public string CaseCode { get; set; }
+
+        /// <summary>
+        /// 寻亲类别
+        /// </summary>
+        [Required]
+        [Display(Name ="寻亲类别")]
+        public int SRTypeId { get; set; }
 
         /// <summary>
         /// 标题
@@ -53,7 +59,7 @@ namespace SRIS.ViewModels
         /// <summary>
         /// 领任务时间
         /// </summary>
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "领任务时间")]
         public DateTime GetTaskDateTime { get; set; }
@@ -75,7 +81,7 @@ namespace SRIS.ViewModels
         /// DNA状态(0:未采血)
         /// </summary>
         [Display(Name = "DNA状态")]
-        public int DNAState { get; set; }
+        public int? DNAState { get; set; }
 
         /// <summary>
         /// 是否退任务(0:未退任务，1：已退任务)
@@ -105,7 +111,6 @@ namespace SRIS.ViewModels
         /// <summary>
         /// 备注
         /// </summary>
-        [Required]
         [Display(Name = "备注")]
         public string Remarks { get; set; }
 

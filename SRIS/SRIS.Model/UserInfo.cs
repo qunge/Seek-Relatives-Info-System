@@ -20,7 +20,7 @@ namespace SRIS.Model
         /// </summary>
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]  // Id字段的值由用户生成而不是由数据库生成
-        public string UserInfoId { get; set; }
+        public string UserInfoID { get; set; }
         /// <summary>
         /// 用户名
         /// </summary>

@@ -61,10 +61,10 @@
         $("#btn_Register").click(function () {
             // 验证信息
             var userName=$("#UserName").val();
-            var checkUserName = /^[A-Za-z0-9]\w{1,24}$/;
+            var checkUserName = /^[A-Za-z0-9\u4e00-\u9fa5]+$/;
             if (!checkUserName.test(userName))
             {
-                layer.alert("用户名必须以大写字母、小写字母、数字组成，长度在2-25之间", { icon: 2 });
+                layer.alert("用户名必须是汉字、字母或数字", { icon: 2 });
                 return false;
             }
 

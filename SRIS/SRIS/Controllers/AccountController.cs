@@ -38,7 +38,7 @@ namespace SRIS.Controllers
                 {
                     ViewBag.Message = "登录成功";
                     Session["userName"] = userInfoModel.UserName;
-                    Session["userId"] = userInfoModel.UserInfoId;
+                    Session["userId"] = userInfoModel.UserInfoID;
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -71,7 +71,7 @@ namespace SRIS.Controllers
                 }
                 string salt = Common.EncryptDecrypt.CreateSalt();
                 UserInfo uf = new UserInfo() {
-                    UserInfoId= System.Guid.NewGuid().ToString(),
+                    UserInfoID= System.Guid.NewGuid().ToString(),
                     Salt= salt,
                     PassWord= Common.EncryptDecrypt.MD5Encoding(userInfoParame.PassWord, salt),
                     UserName=userInfoParame.UserName,
