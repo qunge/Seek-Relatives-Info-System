@@ -65,6 +65,14 @@
     <Compile Include="Migrations\201804200904269_updatesdf.Designer.cs">
       <DependentUpon>201804200904269_updatesdf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804220206193_createdb.cs" />
+    <Compile Include="Migrations\201804220206193_createdb.Designer.cs">
+      <DependentUpon>201804220206193_createdb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804221149310_addSRTypeID.cs" />
+    <Compile Include="Migrations\201804221149310_addSRTypeID.Designer.cs">
+      <DependentUpon>201804221149310_addSRTypeID.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SRISContext.cs" />
@@ -79,6 +87,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804200904269_updatesdf.resx">
       <DependentUpon>201804200904269_updatesdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804220206193_createdb.resx">
+      <DependentUpon>201804220206193_createdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804221149310_addSRTypeID.resx">
+      <DependentUpon>201804221149310_addSRTypeID.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

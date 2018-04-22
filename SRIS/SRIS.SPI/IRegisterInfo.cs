@@ -30,5 +30,12 @@ namespace SRIS.SPI
         /// <param name="model"></param>
         /// <returns></returns>
         bool CreateRegister(RegisterInfo model);
+
+         /// <summary>
+        /// 通过案例类型ID获取案例类型
+        /// </summary>
+        /// <param name="id">例类型ID</param>
+        /// <returns></returns>
+        SRType GetSRTypeById(int id);
     }
 }

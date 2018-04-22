@@ -31,13 +31,30 @@ namespace SRIS.Controllers
         {
             string userId = Session["userId"].ToString();
             List<RegisterInfo> list= IRegisterInfo.GetAllCaseInfo(userId);
-            RegisterCaseInfo modelList = new RegisterCaseInfo() {
+           List<RegisterModel> modelList=new List<RegisterModel>();
+           foreach(RegisterInfo item in list)
+           {
+               RegisterModel model = new RegisterModel(); 
+               model.BeSeekerName=item.BeSeekerName;
+               model.CaseCode=item.CaseCode;
+               model.GetTaskDateTime=item.GetTaskDateTime;
+               model.IsBBHJ=item.IsBBHJ;
+               model.IsReturnTask=item.IsReturnTask;
+               model.PostLink=item.PostLink;
+               model.RegisterInfoId=item.RegisterInfoID;
+               model.RegisterLink=item.RegisterLink;
+               model.Remarks=item.Remarks;
+               model.SRTypeName = IRegisterInfo.GetSRTypeById(Convert.ToInt32(item.SRTypeID)).SRTypeName;
+               model.Title = item.Title;
+               modelList.Add(model);
+           }
+            RegisterCaseInfo data = new RegisterCaseInfo() {
                 code=0,
-                count=list.Count,
-                data=list,
+                count = modelList.Count,
+                data = modelList,
                 msg=""
             };
-            return JsonConvert.SerializeObject(modelList);
+            return JsonConvert.SerializeObject(data);
         }
 
         public ActionResult CreateCase()
@@ -65,9 +82,9 @@ namespace SRIS.Controllers
                     Remarks=model.Remarks,
                     ReturnReason="",
                     ReturnTaskDateTime=null,
-                    SRTypeID=model.SRTypeId.ToString(),
+                    //SRTypeID=model.SRTypeId.ToString(),
                     Title=model.Title,
-                    UserInfoID=Session["userId"].ToString()
+                    //UserInfoID=Session["userId"].ToString()
                 };
                 if (IRegisterInfo.CreateRegister(registerinfoModel))
                 {
@@ -100,5 +117,6 @@ namespace SRIS.Controllers
         {
             return View();
         }
+
     }
 }

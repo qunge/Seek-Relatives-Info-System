@@ -93,10 +93,10 @@ namespace SRIS.Model
 
         /// <summary>
         /// 跟进志愿者
-        /// </summary>
-        [Required]
-        [StringLength(50)]
-        public string UserInfoID { get; set; }
+        ///// </summary>
+        //[Required]
+        //[StringLength(50)]
+        //public string UserInfoID { get; set; }
 
         /// <summary>
         /// 寻亲类别
@@ -106,7 +106,7 @@ namespace SRIS.Model
         /// <summary>
         /// 志愿者
         /// </summary>
-        public UserInfo UserInfo { get; set; }
+        public virtual UserInfo UserInfo { get; set; }
 
         /// <summary>
         /// 联系人信息
@@ -116,7 +116,8 @@ namespace SRIS.Model
         /// <summary>
         /// 寻亲类别
         /// </summary>
-        public SRType SRType { get; set; }
+        public virtual SRType SRType { get; set; }
+
         
     }
 }

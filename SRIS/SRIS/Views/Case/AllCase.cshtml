@@ -1,82 +1,61 @@
-﻿@{
+﻿@model SRIS.ViewModels.RegisterCaseInfo
+@{
     ViewBag.Title = "全部案例";
     Layout = "~/Views/Shared/_BlankPage.cshtml";
 }
 <body>
-    <div class="main-content">
-        <div class="main-content-inner">
-            <!-- #section:basics/content.breadcrumbs -->
-            <div class="breadcrumbs" id="breadcrumbs">
-                <script type="text/javascript">
-                    try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
-                </script>
-                <ul class="breadcrumb">
-                    <li>
-                        <i class="ace-icon fa fa-home home-icon"></i>
-                        @*<a href="#">首页</a>*@
-                        @Html.ActionLink("首页","Index","Home")
-                    </li>
-                    <li>
-                            <a href="#">全部案例</a>
-                        </li>
-                        @*<li class="active">Blank Page</li>*@
-                </ul><!-- /.breadcrumb -->
-                <!-- #section:basics/content.searchbox -->
-                <div class="nav-search" id="nav-search">
-                    <form class="form-search">
-                        <span class="input-icon">
-                            <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-                            <i class="ace-icon fa fa-search nav-search-icon"></i>
-                        </span>
-                    </form>
-                </div><!-- /.nav-search -->
-                <!-- /section:basics/content.searchbox -->
-            </div>
-            <div class="page-content">
-                <!-- /section:settings.box -->
-                <div class="row">
-                    <div class="col-xs-12">
-                        <!-- PAGE CONTENT BEGINS -->
-                        <div style="margin:10px;">
-                                <button id="btn_Create" class="layui-btn">新建</button>
-                            <table class="layui-hide" id="test"></table>
-                        </div>
-                        <!-- PAGE CONTENT ENDS -->
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.page-content -->
+    <div style="margin-left: 200px; margin-top:20px">
+        <div class="demoTable">
+            <button class="layui-btn" data-type="reload">新建</button>
         </div>
-    </div><!-- /.main-content -->
+        <table class="layui-table" lay-data="{width: 1150, height:480, url:'/Case/GetAllCase', page:true, id:'idTest'}" lay-filter="demo">
+            <thead>
+                <tr>
+                    <th lay-data="{field:'CaseCode', width:80}">案例编号</th>
+                    <th lay-data="{field:'SRTypeName', width:80, sort: true}">寻亲类别</th>
+                    <th lay-data="{field:'Title', width:80}">标题</th>
+                    <th lay-data="{field:'BeSeekerName', width:160}">被寻人姓名</th>
+                    <th lay-data="{field:'GetTaskDateTime', width:80, sort: true}">领任务时间</th>
+                    <th lay-data="{field:'RegisterLink', width:80}">登记链接</th>
+                    <th lay-data="{field:'PostLink', width:135, sort: true}">发帖链接</th>
+                    <th lay-data="{field:'DNAState', width:80, sort: true}">DNA状态</th>
+                    <th lay-data="{field:'IsReturnTask', width:80, sort: true}">是否退任务</th>
+                    <th lay-data="{field:'IsBBHJ', width:80, sort: true}">宝贝回家</th>
+                    <th lay-data="{fixed: 'right', width:200, align:'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <script type="text/html" id="barDemo">
+        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">联系人信息</a>
+        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    </script>
+    
     <script>
         layui.use('table', function () {
             var table = layui.table;
-
-            table.render({
-                elem: '#test'
-              , url: '/Case/GetAllCase/'
-              , cols: [[
-                { field: 'CaseCode', width: 80, title: '案例编号', sort: true }
-                , { field: 'Title', width: 80, title: '标题' }
-                , { field: 'BeSeekerName', width: 80, title: '被寻人姓名', sort: true }
-                , { field: 'GetTaskDateTime', width: 80, title: '领任务时间' }
-                , { field: 'RegisterLink', width: 80, title: '登记链接' }
-                , { field: 'PostLink', width: 80, title: '发帖链接', sort: true }
-                , { field: 'DNAState', width: 80, title: 'DNA状态', sort: true }
-                , { field: 'IsReturnTask', width: 80, title: '是否退任务' }
-                , { field: 'ReturnTaskDateTime', width: 135, title: '退任务时间', sort: true }
-              ]]
-              , page: true
+            //监听表格复选框选择
+            table.on('checkbox(demo)', function (obj) {
+                console.log(obj)
             });
+            //监听工具条
+            table.on('tool(demo)', function (obj) {
+                var data = obj.data;
+                if (obj.event === 'detail') {
+                    layer.msg('ID：' + data.id + ' 的查看操作');
+                } else if (obj.event === 'del') {
+                    layer.confirm('真的删除行么', function (index) {
+                        obj.del();
+                        layer.close(index);
+                    });
+                } else if (obj.event === 'edit') {
+                    layer.alert('编辑行：<br>' + JSON.stringify(data))
+                }
+            });
+
         });
-
-        $(function () {
-            $("#btn_Create").click(function () {
-                window.location.href = "/Case/CreateCase";
-            });
-        })
-
     </script>
-
 </body>
 
 

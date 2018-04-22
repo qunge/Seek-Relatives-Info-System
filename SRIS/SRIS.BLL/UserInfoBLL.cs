@@ -14,7 +14,6 @@ namespace SRIS.BLL
     /// </summary>
     public class UserInfoBLL:IUserInfo
     {
-        private SRISContext db = new SRISContext();
         /// <summary>
         /// 注册
         /// </summary>
@@ -22,8 +21,11 @@ namespace SRIS.BLL
         /// <returns></returns>
         public int Register(UserInfo userInfo)
         {
-            db.UserInfos.Add(userInfo);
-            return db.SaveChanges();
+            using (var db = new SRISContext())
+            {
+                db.UserInfos.Add(userInfo);
+                return db.SaveChanges();
+            }
         }
 
         /// <summary>
@@ -33,8 +35,11 @@ namespace SRIS.BLL
         /// <returns></returns>
         public UserInfo GetUserInfoByUserName(string userName)
         {
-            var userInfo = db.UserInfos.Where(n => n.UserName == userName).SingleOrDefault();
-            return userInfo;
+            using (var db = new SRISContext())
+            {
+                var userInfo = db.UserInfos.Where(n => n.UserName == userName).SingleOrDefault();
+                return userInfo;
+            }
         }
     }
 }

@@ -6,24 +6,28 @@ using System.Threading.Tasks;
 using SRIS.Framework;
 using SRIS.Model;
 using SRIS.SPI;
+using System.Data.Entity;
 
 namespace SRIS.BLL
 {
     /// <summary>
     /// 登记案例的信息操作类
     /// </summary>
-    public class RegisterInfoBLL:IRegisterInfo
+    public class RegisterInfoBLL : IRegisterInfo
     {
-        private SRISContext db = new SRISContext();
-
         /// <summary>
         /// 获取所有的登记案例的信息
         /// </summary>
         /// <returns></returns>
         public List<RegisterInfo> GetAllCaseInfo(string userId)
         {
-            var list = db.RegisterInfos.Where(n=>n.UserInfoID==userId).ToList();
-            return list;
+            using (var db = new SRISContext())
+            {
+                var list = db.RegisterInfos.Where(n => n.UserInfo.UserInfoID == userId).Include(t=>t.SRType).ToList();
+      
+                return list;
+            }
+
         }
 
         /// <summary>
@@ -32,8 +36,11 @@ namespace SRIS.BLL
         /// <returns></returns>
         public List<SRType> GetSRType()
         {
-            List<SRType> SRTypeList = db.SRTypes.ToList();
-            return SRTypeList;
+            using (var db = new SRISContext())
+            {
+                List<SRType> SRTypeList = db.SRTypes.ToList();
+                return SRTypeList;
+            }
         }
 
         /// <summary>
@@ -45,14 +52,17 @@ namespace SRIS.BLL
         {
             try
             {
-                db.RegisterInfos.Add(model);
-                if (db.SaveChanges() > 0)
+                using (var db = new SRISContext())
                 {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    db.RegisterInfos.Add(model);
+                    if (db.SaveChanges() > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException ex)
@@ -61,5 +71,19 @@ namespace SRIS.BLL
             }
 
         }
+
+        /// <summary>
+        /// 通过案例类型ID获取案例类型
+        /// </summary>
+        /// <param name="id">例类型ID</param>
+        /// <returns></returns>
+        public SRType GetSRTypeById(int id)
+        {
+            using (var db = new SRISContext())
+            {
+                return db.SRTypes.Where(n => n.SRTypeID == id).FirstOrDefault();
+            }
+        }
+       
     }
 }

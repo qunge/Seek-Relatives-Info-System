@@ -13,7 +13,7 @@ namespace SRIS.ViewModels
         public int code { get; set; }
         public string msg { get; set; }
         public int count { get; set; }
-        public List<RegisterInfo> data { get; set; }
+        public List<RegisterModel> data { get; set; }
     }
 
     public class RegisterModel
@@ -38,7 +38,7 @@ namespace SRIS.ViewModels
         /// </summary>
         [Required]
         [Display(Name ="寻亲类别")]
-        public int SRTypeId { get; set; }
+        public string SRTypeName { get; set; }
 
         /// <summary>
         /// 标题

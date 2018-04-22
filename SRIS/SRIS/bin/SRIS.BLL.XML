@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SRIS.BLL</name>
+    </assembly>
+    <members>
+        <member name="T:SRIS.BLL.RegisterInfoBLL">
+            <summary>
+            登记案例的信息操作类
+            </summary>
+        </member>
+        <member name="M:SRIS.BLL.RegisterInfoBLL.GetAllCaseInfo(System.String)">
+            <summary>
+            获取所有的登记案例的信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SRIS.BLL.RegisterInfoBLL.GetSRType">
+            <summary>
+            获取所有的案例类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SRIS.BLL.RegisterInfoBLL.CreateRegister(SRIS.Model.RegisterInfo)">
+            <summary>
+            创建一条案例信息
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SRIS.BLL.RegisterInfoBLL.GetSRTypeById(System.Int32)">
+            <summary>
+            通过案例类型ID获取案例类型
+            </summary>
+            <param name="id">例类型ID</param>
+            <returns></returns>
+        </member>
+        <member name="T:SRIS.BLL.UserInfoBLL">
+            <summary>
+            用户信息操作类
+            </summary>
+        </member>
+        <member name="M:SRIS.BLL.UserInfoBLL.Register(SRIS.Model.UserInfo)">
+            <summary>
+            注册
+            </summary>
+            <param name="userInfo">用户信息实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:SRIS.BLL.UserInfoBLL.GetUserInfoByUserName(System.String)">
+            <summary>
+            通过用户名查询用户信息
+            </summary>
+            <param name="userName">用户名</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

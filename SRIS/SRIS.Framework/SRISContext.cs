@@ -12,7 +12,9 @@ namespace SRIS.Framework
     public class SRISContext:DbContext
     {
         public SRISContext():base("SRISContext")
-        { }
+        {
+            // this.Configuration.LazyLoadingEnabled = false;
+        }
         /// <summary>
         /// 用户信息表
         /// </summary>
