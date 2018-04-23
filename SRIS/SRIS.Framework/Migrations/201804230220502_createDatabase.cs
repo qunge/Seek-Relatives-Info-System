@@ -3,7 +3,7 @@ namespace SRIS.Framework.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateDataBase : DbMigration
+    public partial class createDatabase : DbMigration
     {
         public override void Up()
         {
@@ -41,15 +41,14 @@ namespace SRIS.Framework.Migrations
                         IsBBHJ = c.String(),
                         Remarks = c.String(),
                         CreateDateTime = c.DateTime(nullable: false),
-                        UserInfoID = c.String(nullable: false, maxLength: 128),
-                        SRTypeID = c.String(),
-                        SRType_SRTypeID = c.Int(),
+                        SRTypeID = c.Int(),
+                        UserInfo_UserInfoID = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.RegisterInfoID)
-                .ForeignKey("dbo.SRType", t => t.SRType_SRTypeID)
-                .ForeignKey("dbo.UserInfo", t => t.UserInfoID, cascadeDelete: true)
-                .Index(t => t.UserInfoID)
-                .Index(t => t.SRType_SRTypeID);
+                .ForeignKey("dbo.SRType", t => t.SRTypeID)
+                .ForeignKey("dbo.UserInfo", t => t.UserInfo_UserInfoID)
+                .Index(t => t.SRTypeID)
+                .Index(t => t.UserInfo_UserInfoID);
             
             CreateTable(
                 "dbo.LinkMan",
@@ -103,12 +102,12 @@ namespace SRIS.Framework.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.BBHJInfo", "RegisterInfoID", "dbo.RegisterInfo");
-            DropForeignKey("dbo.RegisterInfo", "UserInfoID", "dbo.UserInfo");
-            DropForeignKey("dbo.RegisterInfo", "SRType_SRTypeID", "dbo.SRType");
+            DropForeignKey("dbo.RegisterInfo", "UserInfo_UserInfoID", "dbo.UserInfo");
+            DropForeignKey("dbo.RegisterInfo", "SRTypeID", "dbo.SRType");
             DropForeignKey("dbo.LinkMan", "RegisterInfoId", "dbo.RegisterInfo");
             DropIndex("dbo.LinkMan", new[] { "RegisterInfoId" });
-            DropIndex("dbo.RegisterInfo", new[] { "SRType_SRTypeID" });
-            DropIndex("dbo.RegisterInfo", new[] { "UserInfoID" });
+            DropIndex("dbo.RegisterInfo", new[] { "UserInfo_UserInfoID" });
+            DropIndex("dbo.RegisterInfo", new[] { "SRTypeID" });
             DropIndex("dbo.BBHJInfo", new[] { "RegisterInfoID" });
             DropTable("dbo.UserInfo");
             DropTable("dbo.SRType");

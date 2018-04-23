@@ -7,13 +7,13 @@ namespace SRIS.Framework.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class updatesdf : IMigrationMetadata
+    public sealed partial class addusid : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updatesdf));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addusid));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804200904269_updatesdf"; }
+            get { return "201804230243289_addusid"; }
         }
         
         string IMigrationMetadata.Source

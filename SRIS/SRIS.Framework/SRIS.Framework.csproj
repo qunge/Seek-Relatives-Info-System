@@ -57,21 +57,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201804200827054_CreateDataBase.cs" />
-    <Compile Include="Migrations\201804200827054_CreateDataBase.Designer.cs">
-      <DependentUpon>201804200827054_CreateDataBase.cs</DependentUpon>
+    <Compile Include="Migrations\201804230220502_createDatabase.cs" />
+    <Compile Include="Migrations\201804230220502_createDatabase.Designer.cs">
+      <DependentUpon>201804230220502_createDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804200904269_updatesdf.cs" />
-    <Compile Include="Migrations\201804200904269_updatesdf.Designer.cs">
-      <DependentUpon>201804200904269_updatesdf.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804220206193_createdb.cs" />
-    <Compile Include="Migrations\201804220206193_createdb.Designer.cs">
-      <DependentUpon>201804220206193_createdb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804221149310_addSRTypeID.cs" />
-    <Compile Include="Migrations\201804221149310_addSRTypeID.Designer.cs">
-      <DependentUpon>201804221149310_addSRTypeID.cs</DependentUpon>
+    <Compile Include="Migrations\201804230243289_addusid.cs" />
+    <Compile Include="Migrations\201804230243289_addusid.Designer.cs">
+      <DependentUpon>201804230243289_addusid.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,17 +74,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804200827054_CreateDataBase.resx">
-      <DependentUpon>201804200827054_CreateDataBase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804230220502_createDatabase.resx">
+      <DependentUpon>201804230220502_createDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804200904269_updatesdf.resx">
-      <DependentUpon>201804200904269_updatesdf.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804220206193_createdb.resx">
-      <DependentUpon>201804220206193_createdb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804221149310_addSRTypeID.resx">
-      <DependentUpon>201804221149310_addSRTypeID.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804230243289_addusid.resx">
+      <DependentUpon>201804230243289_addusid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

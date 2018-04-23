@@ -84,6 +84,20 @@ namespace SRIS.BLL
                 return db.SRTypes.Where(n => n.SRTypeID == id).FirstOrDefault();
             }
         }
+
+        /// <summary>
+        /// 通过案例ID获取联系人信息
+        /// </summary>
+        /// <param name="CaseId">案例ID</param>
+        /// <returns></returns>
+        public LinkMan GetLinManModelById(string CaseId)
+        {
+            using (var db = new SRISContext())
+            {
+                LinkMan model = db.LinkMans.Where(n=>n.RegisterInfoId==CaseId).FirstOrDefault();
+                return model;
+            }
+        }
        
     }
 }

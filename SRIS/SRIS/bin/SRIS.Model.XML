@@ -219,6 +219,7 @@
             创建时间
             </summary>
         </member>
+        <!-- Badly formed XML comment ignored for member "P:SRIS.Model.RegisterInfo.UserInfoID" -->
         <member name="P:SRIS.Model.RegisterInfo.SRTypeID">
             <summary>
             寻亲类别

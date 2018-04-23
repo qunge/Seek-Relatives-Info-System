@@ -37,5 +37,12 @@ namespace SRIS.SPI
         /// <param name="id">例类型ID</param>
         /// <returns></returns>
         SRType GetSRTypeById(int id);
+
+        /// <summary>
+        /// 通过案例ID获取联系人信息
+        /// </summary>
+        /// <param name="CaseId">案例ID</param>
+        /// <returns></returns>
+        LinkMan GetLinManModelById(string CaseId);
     }
 }

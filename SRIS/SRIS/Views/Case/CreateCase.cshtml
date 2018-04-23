@@ -111,6 +111,16 @@
 
                                             <div class="layui-form-item layui-form-text">
                                                 @*<label class="layui-form-label">文本域</label>*@
+                                                @Html.LabelFor(model => model.PostLink, htmlAttributes: new { @class = "layui-form-label" })
+                                                <div class="layui-input-block">
+                                                    @*<textarea placeholder="请输入内容" class="layui-textarea"></textarea>*@
+                                                    @Html.EditorFor(model => model.PostLink, new { @class = "layui-textarea" })
+                                                    @Html.ValidationMessageFor(model => model.PostLink)
+                                                </div>
+                                            </div>
+
+                                            <div class="layui-form-item layui-form-text">
+                                                @*<label class="layui-form-label">文本域</label>*@
                                                 @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "layui-form-label" })
                                                 <div class="layui-input-block">
                                                     @*<textarea placeholder="请输入内容" class="layui-textarea"></textarea>*@

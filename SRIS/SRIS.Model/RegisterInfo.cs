@@ -94,14 +94,14 @@ namespace SRIS.Model
         /// <summary>
         /// 跟进志愿者
         ///// </summary>
-        //[Required]
-        //[StringLength(50)]
-        //public string UserInfoID { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string UserInfoID { get; set; }
 
         /// <summary>
         /// 寻亲类别
         /// </summary>
-        public string SRTypeID { get; set; }
+        public int? SRTypeID { get; set; }
 
         /// <summary>
         /// 志愿者

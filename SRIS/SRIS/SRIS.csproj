@@ -764,6 +764,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\LinkMan.cs" />
     <Compile Include="ViewModels\MessageModel.cs" />
     <Compile Include="ViewModels\RegisterCaseInfo.cs" />
     <Compile Include="ViewModels\UserInfos.cs" />
@@ -782,7 +783,7 @@
     <Content Include="Views\Case\AllCase.cshtml" />
     <Content Include="Views\Case\CreateCase.cshtml" />
     <Content Include="Views\Case\EditCase.cshtml" />
-    <Content Include="Views\Case\sss.cshtml" />
+    <Content Include="Views\Case\EditLinManInfo.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

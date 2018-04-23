@@ -67,7 +67,7 @@
                 <a href="#" class="navbar-brand">
                     <small>
                         <i class="fa fa-leaf"></i>
-                        Ace Admin
+                        等着我寻亲信息管理系统
                     </small>
                 </a>
 
@@ -340,7 +340,16 @@
                             <img class="nav-user-photo" src="~/Content/assets/avatars/user.jpg" alt="Jason's Photo" />
                             <span class="user-info">
                                 <small>Welcome,</small>
-                                @Session["userName"].ToString()
+                                @if (Session["userName"] == null)
+                                {
+                                    <script>
+                                        window.location.href = "/Account/Login";
+                                    </script>
+                                }
+                                else
+                                {
+                                    Session["userName"].ToString();
+                                }
                             </span>
 
                             <i class="ace-icon fa fa-caret-down"></i>

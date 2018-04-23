@@ -38,6 +38,8 @@ namespace SRIS.ViewModels
         /// </summary>
         [Required]
         [Display(Name ="寻亲类别")]
+        public int? SRTypeId { get; set; }
+
         public string SRTypeName { get; set; }
 
         /// <summary>
@@ -64,6 +66,10 @@ namespace SRIS.ViewModels
         [Display(Name = "领任务时间")]
         public DateTime GetTaskDateTime { get; set; }
 
+        /// <summary>
+        /// 页面展示领任务时间
+        /// </summary>
+        public string getTaskDate { get; set; }
         /// <summary>
         /// 登记链接
         /// </summary>

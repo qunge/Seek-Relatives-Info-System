@@ -35,6 +35,13 @@
             <param name="id">例类型ID</param>
             <returns></returns>
         </member>
+        <member name="M:SRIS.BLL.RegisterInfoBLL.GetLinManModelById(System.String)">
+            <summary>
+            通过案例ID获取联系人信息
+            </summary>
+            <param name="CaseId">案例ID</param>
+            <returns></returns>
+        </member>
         <member name="T:SRIS.BLL.UserInfoBLL">
             <summary>
             用户信息操作类
