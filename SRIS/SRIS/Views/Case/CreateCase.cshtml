@@ -53,11 +53,11 @@
                                     @using (Html.BeginForm("CreateCase", "Case",FormMethod.Post))
                                     {
                                         @Html.AntiForgeryToken()
-
+                                        @Html.HiddenFor(model=>model.RegisterInfoId)
                                         <div class="form-horizontal">
                                             <hr />
                                             @Html.ValidationSummary(true)
-
+                                            <label class = "layui-form-label">@ViewBag.Message</label>
                                             <div class="layui-form-item">
                                                 <div class="layui-inline">
                                                     @Html.LabelFor(model => model.CaseCode, htmlAttributes: new { @class = "layui-form-label" })

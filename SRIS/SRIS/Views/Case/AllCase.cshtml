@@ -12,7 +12,7 @@
     </div>
     <script type="text/html" id="barDemo">
         <a onclick="LinkManInfo('{{d.RegisterInfoId}}')" class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">联系人信息</a>
-        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        <a onclick="btn_Edit('{{d.RegisterInfoId}}')" class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     </script>
 
@@ -26,14 +26,14 @@
 
     <script type="text/html" id="returnTask">
         {{#  if(d.IsReturnTask === 0){ }}
-        <button class="layui-btn layui-btn-sm layui-btn-normal">退任务</button>
+        <button id="btn_ReturnTask('{{d.RegisterInfoId}}')" class="layui-btn layui-btn-sm layui-btn-normal">退任务</button>
         {{#  } else { }}
-        <button class="layui-btn layui-btn-sm layui-btn-normal">退任务信息</button>
+        <button id="btn_ReturnTask('{{d.RegisterInfoId}}')" class="layui-btn layui-btn-sm layui-btn-normal">退任务信息</button>
         {{#  } }}
     </script>
 
     <script type="text/html" id="bbhj">
-        {{#  if(d.IsBBHJ === 0){ }}
+        {{#  if(d.IsBBHJ === "0"){ }}
         <button class="layui-btn layui-btn-sm layui-btn-normal">引导宝贝回家</button>
         {{#  } else { }}
         <button class="layui-btn layui-btn-sm layui-btn-normal">查看宝贝信息</button>
@@ -50,10 +50,10 @@
               //, cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
               , cols: [[
                 { field: 'CaseCode', title: '案例编号', sort: true, width: '7%' }
-                , { field: 'SRTypeName', title: '寻亲类别',width:'6%' } //width 支持：数字、百分比和不填写。你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
-                , { field: 'Title', title: '标题', sort: true }
+                , { field: 'SRTypeName', title: '寻亲类别', width: '6%', sort: true } //width 支持：数字、百分比和不填写。你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                , { field: 'Title', title: '标题'}
                 , { field: 'BeSeekerName', title: '被寻人姓名', width: '7%' }
-                , { field: 'getTaskDate', title: '领任务时间', width: '7%' }
+                , { field: 'getTaskDate', title: '领任务时间', width: '7%', sort: true }
                 , { field: 'RegisterLink', templet: '#djLink',title:'登记信息', align: 'center', width: '10%' } //单元格内容水平居中
                 , { field: 'PostLink', templet:'#ftLink',title: '发帖链接', sort: true, align: 'left', width: '10%' } //单元格内容水平居中
                 , { field: 'IsReturnTask', templet: '#returnTask', title: '是否退任务', width:'6%', align: 'left' }
@@ -61,6 +61,7 @@
                 , { field: 'Remarks', title: '备注', align: 'left' }
                 , { field: 'right', title: '操作', align: 'left', toolbar: '#barDemo' }
               ]]
+              , page: true
             });
         });
 
@@ -80,8 +81,18 @@
                 fixed: false, //不固定
                 maxmin: true,
                 title:'联系人信息',
-                content: '/Case/EditLinManInfo'
+                content: '/Case/EditLinManInfo?id='+id
             });
+        }
+
+        // 编辑案例信息
+        function btn_Edit(id) {
+            window.location.href = "/Case/CreateCase?id="+id;
+        };
+
+        // 退任务
+        function btn_ReturnTask(id) {
+
         }
 
     </script>

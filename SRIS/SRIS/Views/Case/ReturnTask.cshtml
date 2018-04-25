@@ -1,4 +1,4 @@
-﻿@model SRIS.ViewModels.LinkManModel
+﻿@model SRIS.ViewModels.RegisterModel
 
 @{
     Layout = null;
@@ -9,24 +9,19 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>联系人信息</title>
-    <script src="~/Scripts/js/jquery-1.10.2.min.js"></script>
-    <script src="~/Content/layer/layer.js"></script>
-    <link href="~/Content/layui/css/layui.css" rel="stylesheet" />
-    <script src="~/Content/layui/layui.js"></script>
+    <title>退任务信息</title>
 </head>
 <body>
     <form class="layui-form" action="/Case/EditLinManInfo" method="post">
         <hr />
-        @Html.HiddenFor(model=>model.RegisterInfoId)
-        @Html.HiddenFor(model=>model.LinkManID)
+        @Html.HiddenFor(model => model.RegisterInfoId)
         <label class="layui-form-label" style="color:red">@ViewBag.Message</label>
         <div class="layui-form-item">
             <div class="layui-inline">
-                @Html.LabelFor(model=>model.LinkManName,new { @class= "layui-form-label" })
+                @Html.LabelFor(model => model.LinkManName, new { @class = "layui-form-label" })
                 <div class="layui-input-inline">
-                    @Html.TextBoxFor(model=>model.LinkManName,new { @class= "layui-input" })
-                    @Html.ValidationMessageFor(model=>model.LinkManName)
+                    @Html.TextBoxFor(model => model.LinkManName, new { @class = "layui-input" })
+                    @Html.ValidationMessageFor(model => model.LinkManName)
                 </div>
             </div>
         </div>
@@ -60,6 +55,33 @@
             </div>
         </div>
 
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                @Html.LabelFor(model => model.IdCardNo, new { @class = "layui-form-label" })
+                <div class="layui-input-inline">
+                    @Html.TextBoxFor(model => model.IdCardNo, new { @class = "layui-input" })
+                    @Html.ValidationMessageFor(model => model.IdCardNo)
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                @Html.LabelFor(model => model.Career, new { @class = "layui-form-label" })
+                <div class="layui-input-inline">
+                    @Html.TextBoxFor(model => model.Career, new { @class = "layui-input" })
+                    @Html.ValidationMessageFor(model => model.Career)
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                @Html.LabelFor(model => model.Address, new { @class = "layui-form-label" })
+                <div class="layui-input-inline">
+                    @Html.TextBoxFor(model => model.Address, new { @class = "layui-input" })
+                    @Html.ValidationMessageFor(model => model.Address)
+                </div>
+            </div>
+        </div>
         <div class="layui-form-item">
             <div class="layui-inline">
                 @Html.LabelFor(model => model.Phone, new { @class = "layui-form-label" })
@@ -107,37 +129,10 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-inline">
-                @Html.LabelFor(model => model.Address, new { @class = "layui-form-label" })
-                <div class="layui-input-inline">
-                    @Html.TextBoxFor(model => model.Address, new { @class = "layui-input" })
-                    @Html.ValidationMessageFor(model => model.Address)
-                </div>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
                 @Html.LabelFor(model => model.OtherLink, new { @class = "layui-form-label" })
                 <div class="layui-input-inline">
                     @Html.TextBoxFor(model => model.OtherLink, new { @class = "layui-input" })
                     @Html.ValidationMessageFor(model => model.OtherLink)
-                </div>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                @Html.LabelFor(model => model.IdCardNo, new { @class = "layui-form-label" })
-                <div class="layui-input-inline">
-                    @Html.TextBoxFor(model => model.IdCardNo, new { @class = "layui-input" })
-                    @Html.ValidationMessageFor(model => model.IdCardNo)
-                </div>
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <div class="layui-inline">
-                @Html.LabelFor(model => model.Career, new { @class = "layui-form-label" })
-                <div class="layui-input-inline">
-                    @Html.TextBoxFor(model => model.Career, new { @class = "layui-input" })
-                    @Html.ValidationMessageFor(model => model.Career)
                 </div>
             </div>
         </div>
@@ -151,13 +146,13 @@
             </div>
         </div>
 
-            <div class="layui-form-item">
-                <div class="layui-input-block">
-                    <input type="submit" class="layui-btn"  value="提交"/>
-                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <input type="submit" class="layui-btn" value="提交" />
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
-</form>
+        </div>
+    </form>
     <script>
         //Demo
         layui.use('form', function () {
@@ -171,5 +166,6 @@
             //});
            });
     </script>
+
 </body>
 </html>

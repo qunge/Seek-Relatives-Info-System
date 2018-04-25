@@ -63,43 +63,100 @@ namespace SRIS.Controllers
         /// 创建案例
         /// </summary>
         /// <returns></returns>
-        public ActionResult CreateCase()
+        public ActionResult CreateCase(string id="")
         {
-            SRTypelist();
-            return View();
+            RegisterInfo model = IRegisterInfo.GetRegisterInfoById(id);
+            if (model == null)
+            {
+                SRTypelist();
+                return View();
+            }
+            else
+            {
+                RegisterModel viewModel = new RegisterModel()
+                {
+                    BeSeekerName = model.BeSeekerName,
+                    CaseCode = model.CaseCode,
+                    GetTaskDateTime = model.GetTaskDateTime,
+                    //getTaskDate=model.GetTaskDateTime.ToShortDateString(),
+                    PostLink = model.PostLink,
+                    RegisterInfoId = model.RegisterInfoID,
+                    RegisterLink = model.RegisterLink,
+                    Remarks = model.Remarks,
+                    SRTypeId = model.SRTypeID,
+                    Title = model.Title
+                };
+                SRTypelist();
+                return View(viewModel);
+            }
         }
 
         [HttpPost]
         public ActionResult CreateCase(RegisterModel model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                RegisterInfo registerinfoModel = new RegisterInfo() {
-                    BeSeekerName = model.BeSeekerName,
-                    CaseCode = model.CaseCode,
-                    CreateDateTime = DateTime.Now,
-                    DNAState = null,
-                    GetTaskDateTime=model.GetTaskDateTime,
-                    IsBBHJ="0",
-                    IsReturnTask=0,
-                    PostLink="",
-                    RegisterLink=model.RegisterLink,
-                    RegisterInfoID=Guid.NewGuid().ToString(),
-                    Remarks=model.Remarks,
-                    ReturnReason="",
-                    ReturnTaskDateTime=null,
-                    SRTypeID=model.SRTypeId,
-                    Title=model.Title,
-                    UserInfoID=Session["userId"].ToString()
-                };
-                if (IRegisterInfo.CreateRegister(registerinfoModel))
+                if (ModelState.IsValid)
                 {
-                    return RedirectToAction("AllCase");
-                }
+                    RegisterInfo md = IRegisterInfo.GetRegisterInfoById(model.RegisterInfoId);
+                    if (md == null)
+                    {
+                        // 创建
+                        RegisterInfo registerinfoModel = new RegisterInfo()
+                        {
+                            BeSeekerName = model.BeSeekerName,
+                            CaseCode = model.CaseCode,
+                            CreateDateTime = DateTime.Now,
+                            DNAState = null,
+                            GetTaskDateTime = model.GetTaskDateTime,
+                            IsBBHJ = "0",
+                            IsReturnTask = 0,
+                            PostLink = "",
+                            RegisterLink = model.RegisterLink,
+                            RegisterInfoID = Guid.NewGuid().ToString(),
+                            Remarks = model.Remarks,
+                            ReturnReason = "",
+                            ReturnTaskDateTime = null,
+                            SRTypeID = model.SRTypeId,
+                            Title = model.Title,
+                            UserInfoID = Session["userId"].ToString()
+                        };
+                        if (IRegisterInfo.CreateRegister(registerinfoModel))
+                        {
+                            return RedirectToAction("AllCase");
+                        }
+                    }
+                    else
+                    {
+                        // 修改
+                        md.BeSeekerName = model.BeSeekerName;
+                        md.CaseCode = model.CaseCode;
+                        md.GetTaskDateTime = model.GetTaskDateTime;
+                        md.PostLink = "";
+                        md.RegisterLink = model.RegisterLink;
+                        md.PostLink = model.PostLink==null?"":model.PostLink;
+                        md.Remarks = model.Remarks;
+                        md.SRTypeID = model.SRTypeId;
+                        md.Title = model.Title;
+                        md.RegisterInfoID = model.RegisterInfoId;
+                        if (IRegisterInfo.UpdateRegisterInfo(md))
+                        {
+                            return RedirectToAction("AllCase");
+                        }
+                    }
 
+
+
+                }
+                SRTypelist();
+                return View(model);
             }
-            SRTypelist();
-            return View(model);
+            catch (Exception e)
+            {
+                ViewBag.Message = e.Message;
+                SRTypelist();
+                return View(model);
+            }
         }
 
         private void SRTypelist()
@@ -119,9 +176,35 @@ namespace SRIS.Controllers
             ViewBag.select = select;
         }
 
-        public ActionResult EditCase()
+        public ActionResult EditCase(string caseId)
         {
-            return View();
+            LinkMan model = IRegisterInfo.GetLinManModelById(caseId);
+            if (model == null)
+            {
+                return View();
+            }
+            else
+            {
+                LinkManModel viewModel = new LinkManModel()
+                {
+                    Address = model.Address,
+                    Birthday = model.Birthday,
+                    Career = model.Career,
+                    Email = model.Email,
+                    IdCardNo = model.IdCardNo,
+                    LinkManName = model.LinkManName,
+                    OtherLink = model.OtherLink,
+                    Phone = model.Phone,
+                    QQ = model.QQ,
+                    Relationship = model.Relationship,
+                    Remark = model.Remark,
+                    Sex = model.Sex,
+                    TelPhone = model.TelPhone,
+                    WeiXin = model.WeiXin,
+                    LinkManID = model.LinkManID
+                };
+                return View(viewModel);
+            }
         }
 
         public ActionResult EditLinManInfo(string id)
@@ -129,7 +212,10 @@ namespace SRIS.Controllers
             LinkMan model = IRegisterInfo.GetLinManModelById(id);
             if (model == null)
             {
-                return View();
+                LinkManModel viewModel = new LinkManModel() {
+                    RegisterInfoId=id
+                };
+                return View(viewModel);
             }
             else
             {
@@ -148,7 +234,8 @@ namespace SRIS.Controllers
                     Sex=model.Sex,
                     TelPhone=model.TelPhone,
                     WeiXin=model.WeiXin,
-                    LinkManID=model.LinkManID
+                    LinkManID=model.LinkManID,
+                    RegisterInfoId=model.RegisterInfoId
                 };
                 return View(viewModel);
             }
@@ -157,19 +244,94 @@ namespace SRIS.Controllers
         [HttpPost]
         public ActionResult EditLinManInfo(LinkManModel model)
         {
-            if (ModelState.IsValid)
+            try
             {
-                LinkMan LinManmodel = IRegisterInfo.GetLinManModelById(model.RegisterInfoId);
-                if (LinManmodel == null)
+                if (ModelState.IsValid)
                 {
-                    // 新建
+                    LinkMan LinManmodel = IRegisterInfo.GetLinManModelById(model.RegisterInfoId);
+
+                    if (LinManmodel == null)
+                    {
+                        // 新建
+                        LinkMan linkMan = new LinkMan()
+                        {
+                            Address = model.Address,
+                            Birthday = model.Birthday,
+                            Career = model.Career,
+                            CreateDateTime = DateTime.Now,
+                            Email = model.Email,
+                            IdCardNo = model.IdCardNo,
+                            LinkManID = System.Guid.NewGuid().ToString(),
+                            LinkManName = model.LinkManName,
+                            OtherLink = model.OtherLink,
+                            Phone = model.Phone,
+                            QQ = model.QQ,
+                            RegisterInfoId = model.RegisterInfoId,
+                            Relationship = model.Relationship,
+                            Remark = model.Remark,
+                            Sex = model.Sex,
+                            TelPhone = model.TelPhone,
+                            WeiXin = model.WeiXin
+                        };
+                        if (IRegisterInfo.CreateLinkMan(linkMan))
+                        {
+                            ViewBag.Message = "添加联系人成功";
+                            return View("EditLinManInfo");
+                        }
+                    }
+                    else
+                    {
+                        // 编辑
+                        LinManmodel.Address = model.Address;
+                        LinManmodel.Birthday = model.Birthday;
+                        LinManmodel.Career = model.Career;
+                        LinManmodel.CreateDateTime = DateTime.Now;
+                        LinManmodel.Email = model.Email;
+                        LinManmodel.IdCardNo = model.IdCardNo;
+                        LinManmodel.LinkManID = model.LinkManID;
+                        LinManmodel.LinkManName = model.LinkManName;
+                        LinManmodel.OtherLink = model.OtherLink;
+                        LinManmodel.Phone = model.Phone;
+                        LinManmodel.QQ = model.QQ;
+                        LinManmodel.RegisterInfoId = model.RegisterInfoId;
+                        LinManmodel.Relationship = model.Relationship;
+                        LinManmodel.Remark = model.Remark;
+                        LinManmodel.Sex = model.Sex;
+                        LinManmodel.TelPhone = model.TelPhone;
+                        LinManmodel.WeiXin = model.WeiXin;
+                        if (IRegisterInfo.UpdateLinkMan(LinManmodel))
+                        {
+                            ViewBag.Message = "修改联系人成功";
+                            return View("EditLinManInfo");
+                        }
+                    }
                 }
-                else
-                {
-                    // 编辑
-                }
+                ViewBag.Message = "修改联系人失败";
+                return View(model);
             }
-            return View(model);
+            catch (Exception e)
+            {
+                ViewBag.Message = e.Message;
+                return View(model);
+            }
+        }
+
+
+        public ActionResult ReturnTask(string id)
+        {
+            RegisterInfo model = IRegisterInfo.GetRegisterInfoById(id);
+            if (model == null)
+            {
+                return View();
+            }
+            else
+            {
+                RegisterModel viewModel = new RegisterModel() {
+                    ReturnReason=model.ReturnReason,
+                    ReturnTaskDateTime=model.ReturnTaskDateTime
+                };
+                return View(viewModel);
+            }
         }
 
     }

@@ -784,6 +784,7 @@
     <Content Include="Views\Case\CreateCase.cshtml" />
     <Content Include="Views\Case\EditCase.cshtml" />
     <Content Include="Views\Case\EditLinManInfo.cshtml" />
+    <Content Include="Views\Case\ReturnTask.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -44,5 +44,33 @@ namespace SRIS.SPI
         /// <param name="CaseId">案例ID</param>
         /// <returns></returns>
         LinkMan GetLinManModelById(string CaseId);
+
+        /// <summary>
+        /// 创建联系人信息
+        /// </summary>
+        /// <param name="model">联系人信息实体类</param>
+        /// <returns></returns>
+        bool CreateLinkMan(LinkMan model);
+
+        /// <summary>
+        /// 修改联系人信息
+        /// </summary>
+        /// <param name="model">联系人信息实体类</param>
+        /// <returns></returns>
+        bool UpdateLinkMan(LinkMan model);
+
+        /// <summary>
+        /// 通过案例ID获取案例信息
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        RegisterInfo GetRegisterInfoById(string Id);
+
+        /// <summary>
+        /// 修改案例信息
+        /// </summary>
+        /// <param name="model">案例信息实体类</param>
+        /// <returns></returns>
+        bool UpdateRegisterInfo(RegisterInfo model);
     }
 }

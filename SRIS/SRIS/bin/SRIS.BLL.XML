@@ -15,6 +15,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:SRIS.BLL.RegisterInfoBLL.GetRegisterInfoById(System.String)">
+            <summary>
+            通过案例ID获取案例信息
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
         <member name="M:SRIS.BLL.RegisterInfoBLL.GetSRType">
             <summary>
             获取所有的案例类型
@@ -40,6 +47,27 @@
             通过案例ID获取联系人信息
             </summary>
             <param name="CaseId">案例ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:SRIS.BLL.RegisterInfoBLL.CreateLinkMan(SRIS.Model.LinkMan)">
+            <summary>
+            创建联系人信息
+            </summary>
+            <param name="model">联系人信息实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:SRIS.BLL.RegisterInfoBLL.UpdateLinkMan(SRIS.Model.LinkMan)">
+            <summary>
+            修改联系人信息
+            </summary>
+            <param name="model">联系人信息实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:SRIS.BLL.RegisterInfoBLL.UpdateRegisterInfo(SRIS.Model.RegisterInfo)">
+            <summary>
+            修改案例信息
+            </summary>
+            <param name="model">案例信息实体类</param>
             <returns></returns>
         </member>
         <member name="T:SRIS.BLL.UserInfoBLL">

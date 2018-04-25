@@ -23,11 +23,28 @@ namespace SRIS.BLL
         {
             using (var db = new SRISContext())
             {
-                var list = db.RegisterInfos.Where(n => n.UserInfo.UserInfoID == userId).Include(t=>t.SRType).ToList();
+                var list = db.RegisterInfos
+                    .Where(n => n.UserInfo.UserInfoID == userId)
+                    .Include(t=>t.SRType)
+                    .OrderByDescending(s=>s.CreateDateTime)
+                    .ToList();
       
                 return list;
             }
 
+        }
+
+        /// <summary>
+        /// 通过案例ID获取案例信息
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public RegisterInfo GetRegisterInfoById(string Id)
+        {
+            using (var db = new SRISContext())
+            {
+                return db.RegisterInfos.Find(Id);
+            }
         }
 
         /// <summary>
@@ -98,6 +115,80 @@ namespace SRIS.BLL
                 return model;
             }
         }
-       
+
+        /// <summary>
+        /// 创建联系人信息
+        /// </summary>
+        /// <param name="model">联系人信息实体类</param>
+        /// <returns></returns>
+        public bool CreateLinkMan(LinkMan model)
+        {
+            using (var db = new SRISContext())
+            {
+                db.LinkMans.Add(model);
+                if (db.SaveChanges() > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 修改联系人信息
+        /// </summary>
+        /// <param name="model">联系人信息实体类</param>
+        /// <returns></returns>
+        public bool UpdateLinkMan(LinkMan model)
+        {
+            using (var db = new SRISContext())
+            {
+                LinkMan linkManModel = db.LinkMans.Find(model.LinkManID);
+                linkManModel.Address = model.Address;
+                linkManModel.Birthday = model.Birthday;
+                linkManModel.Career = model.Career;
+                linkManModel.CreateDateTime = model.CreateDateTime;
+                linkManModel.Email = model.Email;
+                linkManModel.IdCardNo = model.IdCardNo;
+                linkManModel.LinkManName = model.LinkManName;
+                linkManModel.OtherLink = model.OtherLink;
+                linkManModel.Phone = model.Phone;
+                linkManModel.QQ = model.QQ;
+                linkManModel.Relationship = model.Relationship;
+                linkManModel.Remark = model.Remark;
+                linkManModel.Sex = model.Sex;
+                linkManModel.TelPhone = model.TelPhone;
+                linkManModel.WeiXin = model.WeiXin;
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// 修改案例信息
+        /// </summary>
+        /// <param name="model">案例信息实体类</param>
+        /// <returns></returns>
+        public bool UpdateRegisterInfo(RegisterInfo model)
+        {
+            using (var db = new SRISContext())
+            {
+                RegisterInfo md = db.RegisterInfos.Find(model.RegisterInfoID);
+                md.BeSeekerName = model.BeSeekerName;
+                md.CaseCode = model.CaseCode;
+                md.GetTaskDateTime = model.GetTaskDateTime;
+                md.PostLink = model.PostLink;
+                md.RegisterLink = model.RegisterLink;
+                md.Remarks = model.Remarks;
+                md.SRTypeID = model.SRTypeID;
+                md.Title = model.Title;
+                db.SaveChanges();
+                return true;
+            }
+        }
+
     }
 }

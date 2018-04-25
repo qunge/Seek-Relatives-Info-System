@@ -13,7 +13,6 @@ namespace SRIS.ViewModels
         /// <summary>
         /// 联系人ID
         /// </summary>
-        [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]  // Id字段的值由用户生成而不是由数据库生成
         [Display(Name = "联系人ID")]
         public string LinkManID { get; set; }
@@ -26,7 +25,7 @@ namespace SRIS.ViewModels
         /// <summary>
         /// 联系人姓名
         /// </summary>
-        [Required]
+        [Required(ErrorMessage ="联系人姓名必填")]
         [StringLength(50)]
         [Display(Name = "联系人姓名")]
         public string LinkManName { get; set; }
@@ -113,6 +112,7 @@ namespace SRIS.ViewModels
         /// </summary>
         [Display(Name = "备注")]
         public string Remark { get; set; }
+        
 
     }
 }
