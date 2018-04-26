@@ -86,6 +86,12 @@ namespace SRIS.Model
         public string Remarks { get; set; }
 
         /// <summary>
+        /// 是否删除（0：未删除  1：已删除）
+        /// </summary>
+        [DefaultValue(0)]
+        public int IsDelete { get; set; }
+
+        /// <summary>
         /// 创建时间
         /// </summary>
         [Required]

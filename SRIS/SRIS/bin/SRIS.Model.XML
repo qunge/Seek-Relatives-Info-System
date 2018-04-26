@@ -214,6 +214,11 @@
             备注
             </summary>
         </member>
+        <member name="P:SRIS.Model.RegisterInfo.IsDelete">
+            <summary>
+            是否删除（0：未删除  1：已删除）
+            </summary>
+        </member>
         <member name="P:SRIS.Model.RegisterInfo.CreateDateTime">
             <summary>
             创建时间

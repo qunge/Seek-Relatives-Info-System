@@ -27,10 +27,16 @@ namespace SRIS.Controllers
         /// 获取所有案例信息
         /// </summary>
         /// <returns></returns>
-        public string GetAllCase()
+        public string GetAllCase(int page,int limit,string whereStr)
         {
+            int pageCount;
+            Dictionary<string, string> whereDic = null;
+            if (!string.IsNullOrEmpty(whereStr))
+            {
+                whereDic = JsonConvert.DeserializeObject<Dictionary<string, string>>(whereStr);
+            }
             string userId = Session["userId"].ToString();
-            List<RegisterInfo> list = IRegisterInfo.GetAllCaseInfo(userId);
+            List<RegisterInfo> list = IRegisterInfo.GetAllCaseInfo(userId, page,limit, whereDic, out pageCount);
             List<RegisterModel> modelList = new List<RegisterModel>();
             foreach (RegisterInfo item in list)
             {
@@ -52,7 +58,7 @@ namespace SRIS.Controllers
             RegisterCaseInfo data = new RegisterCaseInfo()
             {
                 code = 0,
-                count = modelList.Count,
+                count = pageCount,
                 data = modelList,
                 msg = ""
             };
@@ -332,6 +338,28 @@ namespace SRIS.Controllers
                 };
                 return View(viewModel);
             }
+        }
+
+        [HttpPost]
+        public JsonResult DelRegisterInfo(string Id)
+        {
+            var obj = new { state=false,message=""};
+            try
+            {
+                if (IRegisterInfo.DelRegisterInfo(Id))
+                {
+                    obj = new { state = true, message = "删除成功" };
+                }
+                else
+                {
+                    obj = new { state = false, message = "删除失败" };
+                }
+            }
+            catch (Exception e)
+            {
+                obj = new { state = false, message = e.Message };
+            }
+            return Json(obj);
         }
 
     }

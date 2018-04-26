@@ -16,7 +16,7 @@ namespace SRIS.SPI
         /// 获取所有的登记案例的信息
         /// </summary>
         /// <returns></returns>
-        List<RegisterInfo> GetAllCaseInfo(string userId);
+        List<RegisterInfo> GetAllCaseInfo(string userId, int page, int limit,Dictionary<string,string> whereDic, out int pageCount);
 
         /// <summary>
         /// 获取所有的案例类型
@@ -72,5 +72,12 @@ namespace SRIS.SPI
         /// <param name="model">案例信息实体类</param>
         /// <returns></returns>
         bool UpdateRegisterInfo(RegisterInfo model);
+
+        /// <summary>
+        /// 删除案例登记信息
+        /// </summary>
+        /// <param name="id">案例登记ID</param>
+        /// <returns></returns>
+        bool DelRegisterInfo(string id);
     }
 }

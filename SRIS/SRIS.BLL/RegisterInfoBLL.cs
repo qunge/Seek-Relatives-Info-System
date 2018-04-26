@@ -19,17 +19,36 @@ namespace SRIS.BLL
         /// 获取所有的登记案例的信息
         /// </summary>
         /// <returns></returns>
-        public List<RegisterInfo> GetAllCaseInfo(string userId)
+        public List<RegisterInfo> GetAllCaseInfo(string userId,int page,int limit,Dictionary<string,string> whereDic, out int pageCount)
         {
             using (var db = new SRISContext())
             {
-                var list = db.RegisterInfos
-                    .Where(n => n.UserInfo.UserInfoID == userId)
+                List<RegisterInfo> list = db.RegisterInfos
+                    .Where(n => n.UserInfo.UserInfoID == userId&&n.IsReturnTask==0&&n.IsBBHJ=="0"&&n.IsDelete==0)
                     .Include(t=>t.SRType)
-                    .OrderByDescending(s=>s.CreateDateTime)
+                    .OrderByDescending(s=>s.GetTaskDateTime)
                     .ToList();
-      
-                return list;
+                if (whereDic != null)
+                {
+                    if (!string.IsNullOrEmpty(whereDic["caseCode"]))
+                    {
+                        list = list.Where(n => n.CaseCode == whereDic["caseCode"]).ToList();
+                    }
+                    if (!string.IsNullOrEmpty(whereDic["srTypeId"]))
+                    {
+                        list = list.Where(n => n.SRTypeID == Convert.ToInt32(whereDic["srTypeId"])).ToList();
+                    }
+                    if (!string.IsNullOrEmpty(whereDic["beSeekerName"]))
+                    {
+                        list = list.Where(n => n.BeSeekerName == whereDic["beSeekerName"]).ToList();
+                    }
+                    if (!string.IsNullOrEmpty(whereDic["getTaskDate"]))
+                    {
+                        list = list.Where(n => n.GetTaskDateTime == Convert.ToDateTime(whereDic["getTaskDate"])).ToList();
+                    }
+                }
+                pageCount = list.Count;
+                return list.Skip((page-1)*limit).Take(limit).ToList();
             }
 
         }
@@ -185,6 +204,22 @@ namespace SRIS.BLL
                 md.Remarks = model.Remarks;
                 md.SRTypeID = model.SRTypeID;
                 md.Title = model.Title;
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// 删除案例登记信息
+        /// </summary>
+        /// <param name="id">案例登记ID</param>
+        /// <returns></returns>
+        public bool DelRegisterInfo(string id)
+        {
+            using (var db = new SRISContext())
+            {
+                RegisterInfo model = db.RegisterInfos.Find(id);
+                model.IsDelete = 1;
                 db.SaveChanges();
                 return true;
             }

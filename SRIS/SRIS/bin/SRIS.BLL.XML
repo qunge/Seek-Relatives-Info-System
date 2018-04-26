@@ -9,7 +9,7 @@
             登记案例的信息操作类
             </summary>
         </member>
-        <member name="M:SRIS.BLL.RegisterInfoBLL.GetAllCaseInfo(System.String)">
+        <member name="M:SRIS.BLL.RegisterInfoBLL.GetAllCaseInfo(System.String,System.Int32,System.Int32,System.Collections.Generic.Dictionary{System.String,System.String},System.Int32@)">
             <summary>
             获取所有的登记案例的信息
             </summary>
@@ -68,6 +68,13 @@
             修改案例信息
             </summary>
             <param name="model">案例信息实体类</param>
+            <returns></returns>
+        </member>
+        <member name="M:SRIS.BLL.RegisterInfoBLL.DelRegisterInfo(System.String)">
+            <summary>
+            删除案例登记信息
+            </summary>
+            <param name="id">案例登记ID</param>
             <returns></returns>
         </member>
         <member name="T:SRIS.BLL.UserInfoBLL">
