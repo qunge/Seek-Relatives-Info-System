@@ -30,11 +30,11 @@ namespace SRIS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(UserInfos userInfo)
         {
-            // UserInfo userInfoModel = IUserInfo.GetUserInfoByUserName(userInfo.UserName);
+            //UserInfo userInfoModel = IUserInfo.GetUserInfoByUserName(userInfo.UserName);
             UserInfo userInfoModel = IUserInfo.GetUserInfoByUserName("涅炎");
             if (userInfoModel != null)
             {
-                // string pwd = Common.EncryptDecrypt.MD5Encoding(userInfo.PassWord, userInfoModel.Salt);
+                //string pwd = Common.EncryptDecrypt.MD5Encoding(userInfo.PassWord, userInfoModel.Salt);
                 string pwd = Common.EncryptDecrypt.MD5Encoding("qunge7758521", userInfoModel.Salt);
                 if (pwd == userInfoModel.PassWord)
                 {
