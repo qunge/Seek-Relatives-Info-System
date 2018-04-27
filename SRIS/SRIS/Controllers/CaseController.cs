@@ -287,7 +287,7 @@ namespace SRIS.Controllers
                     }
                     else
                     {
-                        // 编辑
+                        // 编辑信息
                         LinManmodel.Address = model.Address;
                         LinManmodel.Birthday = model.Birthday;
                         LinManmodel.Career = model.Career;
