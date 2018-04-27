@@ -98,17 +98,17 @@
                       , url: '/Case/GetAllCase'
                         //, cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
                       , cols: [[
-                        { field: 'CaseCode', title: '案例编号', width: '7%' }
-                        , { field: 'SRTypeName', title: '寻亲类别', width: '6%' } //width 支持：数字、百分比和不填写。你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
-                        , { field: 'Title', title: '标题' }
-                        , { field: 'BeSeekerName', title: '被寻人姓名', width: '7%' }
-                        , { field: 'getTaskDate', title: '领任务时间', width: '7%' }
-                        , { field: 'RegisterLink', templet: '#djLink', title: '登记信息', align: 'center', width: '10%' } //单元格内容水平居中
-                        , { field: 'PostLink', templet: '#ftLink', title: '发帖链接', align: 'left', width: '10%' } //单元格内容水平居中
-                        , { field: 'IsReturnTask', templet: '#returnTask', title: '是否退任务', width: '6%', align: 'left' }
-                        , { field: 'IsBBHJ', title: '宝贝回家', templet: '#bbhj', width: '8%', align: 'center' }
-                        , { field: 'Remarks', title: '备注', align: 'left' }
-                        , { field: 'right', title: '操作', align: 'left', toolbar: '#barDemo' }
+                        { field: 'CaseCode', title: '案例编号', width: '120' }
+                        , { field: 'SRTypeName', title: '寻亲类别', width: '100' } //width 支持：数字、百分比和不填写。你还可以通过 minWidth 参数局部定义当前单元格的最小宽度，layui 2.2.1 新增
+                        , { field: 'Title', title: '标题', width: '150' }
+                        , { field: 'BeSeekerName', title: '被寻人姓名', width: '100' }
+                        , { field: 'getTaskDate', title: '领任务时间', width: '100' }
+                        , { field: 'RegisterLink', templet: '#djLink', title: '登记信息', align: 'center', width: '100' } //单元格内容水平居中
+                        , { field: 'PostLink', templet: '#ftLink', title: '发帖链接', align: 'left', width: '100' } //单元格内容水平居中
+                        , { field: 'IsReturnTask', templet: '#returnTask', title: '是否退任务', width: '100', align: 'left' }
+                        , { field: 'IsBBHJ', title: '宝贝回家', templet: '#bbhj', width: '120', align: 'center' }
+                        , { field: 'Remarks', title: '备注', align: 'left', width: '150' }
+                        , { field: 'right', title: '操作', align: 'left', toolbar: '#barDemo', width: '200' }
                       ]]
                       , id: 'testReload'
                       , page: true
@@ -140,17 +140,6 @@
                         var type = $(this).data('type');
                         active[type] ? active[type].call(this) : '';
                     });
-                    //tableIns.reload({
-                    //    where: { //设定异步数据接口的额外参数，任意设
-                    //        caseCode: $("#txt_CaseCode").val(),
-                    //        srTypeId: $("#txt_sl_SRTypeId").val(),
-                    //        beSeekerName: $("#txt_BeSeekerName").val(),
-                    //        getTaskDate:$("#txt_getTaskDate").val()
-                    //    }
-                    //      , page: {
-                    //          curr: 1 //重新从第 1 页开始
-                    //      }
-                    //});
                 });
 
                 $(function () {
@@ -164,7 +153,7 @@
                 function LinkManInfo(id) {
                     layer.open({
                         type: 2,
-                        area: ['700px', '450px'],
+                        area: ['500px', '450px'],
                         fixed: false, //不固定
                         maxmin: true,
                         title: '联系人信息',
