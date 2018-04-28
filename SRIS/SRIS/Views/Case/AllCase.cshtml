@@ -22,39 +22,44 @@
             </div>
 
             <div style="margin-left: 20px; margin-top:20px">
+               
                 <div class="demoTable">
-                    案例编号：
-                    <div class="layui-inline">
-                        <input class="layui-input" id="txt_CaseCode" autocomplete="off">
-                    </div>
-                    寻亲类别：
-                    <div class="layui-inline">
-                        <div class="layui-input-inline">
-                            <select id="txt_sl_SRTypeId">
-                                <option value="" selected="selected">==请选择==</option>
-                                <option value="1">家寻亲人</option>
-                                <option value="2">家寻送养</option>
-                                <option value="3">亲人寻家</option>
-                                <option value="4">战友情深</option>
-                                <option value="5">感恩寻人</option>
-                                <option value="6">寻找老友</option>
-                                <option value="7">其他寻人</option>
-                                <option value="8">台海寻亲</option>
-                            </select>
+                    <form class="layui-form layui-form-pane">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label"> 案例编号：</label>
+                            <div class="layui-input-inline">
+                                <input class="layui-input" id="txt_CaseCode" autocomplete="off">
+                            </div>
+
+                            <label class="layui-form-label"> 寻亲类别：</label>
+                            <div class="layui-input-inline">
+                                <select id="txt_sl_SRTypeId">
+                                    <option value="" selected="selected">==请选择==</option>
+                                    <option value="1">家寻亲人</option>
+                                    <option value="2">家寻送养</option>
+                                    <option value="3">亲人寻家</option>
+                                    <option value="4">战友情深</option>
+                                    <option value="5">感恩寻人</option>
+                                    <option value="6">寻找老友</option>
+                                    <option value="7">其他寻人</option>
+                                    <option value="8">台海寻亲</option>
+                                </select>
+                            </div>
+                            <label class="layui-form-label">被寻人姓名：</label>
+                            <div class="layui-input-inline">
+                                <input class="layui-input" id="txt_BeSeekerName" autocomplete="off">
+                            </div>
+                            <label class="layui-form-label"> 领任务时间：</label>
+                            <div class="layui-input-inline">
+                                <input type="date" class="layui-input" id="txt_getTaskDate" autocomplete="off">
+                            </div>
                         </div>
-                    </div>
-                    被寻人姓名：
-                    <div class="layui-inline">
-                        <input class="layui-input" id="txt_BeSeekerName" autocomplete="off">
-                    </div>
-                    领任务时间：
-                    <div class="layui-inline">
-                        <input type="date" class="layui-input" id="txt_getTaskDate" autocomplete="off">
-                    </div>
+                    </form>
                     <button class="layui-btn" data-type="reload">搜索</button>
                     <button id="btn_Create" class="layui-btn">新建</button>
-                </div>
 
+                </div>
+                
 
                 <table class="layui-hide" id="test"></table>
             </div>
@@ -106,7 +111,7 @@
                         , { field: 'RegisterLink', templet: '#djLink', title: '登记信息', align: 'center', width: '100' } //单元格内容水平居中
                         , { field: 'PostLink', templet: '#ftLink', title: '发帖链接', align: 'left', width: '100' } //单元格内容水平居中
                         , { field: 'IsReturnTask', templet: '#returnTask', title: '是否退任务', width: '100', align: 'left' }
-                        , { field: 'IsBBHJ', title: '宝贝回家', templet: '#bbhj', width: '120', align: 'center' }
+                        , { field: 'IsBBHJ', title: '宝贝回家', templet: '#bbhj', width: '130', align: 'center' }
                         , { field: 'Remarks', title: '备注', align: 'left', width: '150' }
                         , { field: 'right', title: '操作', align: 'left', toolbar: '#barDemo', width: '200' }
                       ]]
@@ -175,7 +180,7 @@
                             });
                         }
                         else {
-                            layer.alert(data.message, {icon:2});
+                            layer.alert(data.message, { icon: 2 });
                         }
                     }, "json")
                 };
@@ -189,7 +194,6 @@
         </div>
     </div>
 </body>
-
 
 
 
