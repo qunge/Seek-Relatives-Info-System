@@ -32,7 +32,7 @@ namespace SRIS.BLL
                 {
                     if (!string.IsNullOrEmpty(whereDic["caseCode"]))
                     {
-                        list = list.Where(n => n.CaseCode == whereDic["caseCode"]).ToList();
+                        list = list.Where(n => n.CaseCode.Contains(whereDic["caseCode"])).ToList();
                     }
                     if (!string.IsNullOrEmpty(whereDic["srTypeId"]))
                     {
@@ -40,7 +40,7 @@ namespace SRIS.BLL
                     }
                     if (!string.IsNullOrEmpty(whereDic["beSeekerName"]))
                     {
-                        list = list.Where(n => n.BeSeekerName == whereDic["beSeekerName"]).ToList();
+                        list = list.Where(n => n.BeSeekerName.Contains(whereDic["beSeekerName"])).ToList();
                     }
                     if (!string.IsNullOrEmpty(whereDic["getTaskDate"]))
                     {
