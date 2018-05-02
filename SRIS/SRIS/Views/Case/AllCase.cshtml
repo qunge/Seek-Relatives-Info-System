@@ -66,7 +66,7 @@
 
             <script type="text/html" id="barDemo">
                 <a onclick="LinkManInfo('{{d.RegisterInfoId}}')" class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">联系人信息</a>
-                <button class="layui-btn layui-btn-sm layui-btn-normal">引导宝贝回家</button>
+                <button onclick="btn_ydbbhj('{{d.RegisterInfoId}}')" class="layui-btn layui-btn-sm layui-btn-normal">引导宝贝回家</button>
                 <a onclick="btn_Edit('{{d.RegisterInfoId}}')" class="layui-btn layui-btn-xs" lay-event="edit">设置成功案例</a>
                 <button id="btn_ReturnTask('{{d.RegisterInfoId}}')" class="layui-btn layui-btn-sm layui-btn-normal">退任务</button>
                 <a onclick="btn_Edit('{{d.RegisterInfoId}}')" class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
@@ -169,6 +169,21 @@
                         }
                     }, "json")
                 };
+
+                // 引导宝贝回家
+                function btn_ydbbhj(id) {
+                    $.post("/Case/ydbbhj", { id: id }, function (data) {
+                        if (data.state) {
+                            layer.alert(data.message, { icon: 1 }, function () {
+                                window.location.reload();
+                            });
+                        }
+                        else {
+                            layer.alert(data.message, { icon: 2 });
+                            return false;
+                        }
+                    })
+                }
 
                 // 退任务
                 function btn_ReturnTask(id) {

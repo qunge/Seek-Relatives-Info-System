@@ -759,8 +759,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\1BBHJCaseController.cs" />
     <Compile Include="Controllers\CaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SuccessCaseController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -785,6 +787,8 @@
     <Content Include="Views\Case\EditCase.cshtml" />
     <Content Include="Views\Case\EditLinManInfo.cshtml" />
     <Content Include="Views\Case\ReturnTask.cshtml" />
+    <Content Include="Views\BBHJCase\Index.cshtml" />
+    <Content Include="Views\SuccessCase\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

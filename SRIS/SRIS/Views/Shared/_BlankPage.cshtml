@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
-    <title>Blank Page - Ace Admin</title>
+    <title>信息管理系统</title>
 
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -458,78 +458,19 @@
 
                     <ul class="submenu">
                         <li class="">
-                            @Html.ActionLink("全部案例", "AllCase", "Case")
+                            @Html.ActionLink("跟进案例", "AllCase", "Case")
                         </li>
 
                         <li class="">
-                            <a href="typography.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                家寻亲人
-                            </a>
-
-                            <b class="arrow"></b>
+                                @Html.ActionLink("成功案例", "SuccessCase", "Index")
                         </li>
 
                         <li class="">
-                            <a href="elements.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                家寻送样
-                            </a>
-
-                            <b class="arrow"></b>
+                                @Html.ActionLink("宝贝回家案例", "BBHJCase", "Index")
                         </li>
 
                         <li class="">
-                            <a href="buttons.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                亲人寻家
-                            </a>
-
-                            <b class="arrow"></b>
-                        </li>
-
-                        <li class="">
-                            <a href="content-slider.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                               战友情深
-                            </a>
-
-                            <b class="arrow"></b>
-                        </li>
-
-                        <li class="">
-                            <a href="treeview.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                感恩寻人
-                            </a>
-
-                            <b class="arrow"></b>
-                        </li>
-
-                        <li class="">
-                            <a href="jquery-ui.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                寻找老友
-                            </a>
-
-                            <b class="arrow"></b>
-                        </li>
-
-                        <li class="">
-                            <a href="nestable-list.html">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                其他寻人
-                            </a>
-
-                            <b class="arrow"></b>
-                        </li>
-
-                        <li class="">
-                            <a href="#" class="dropdown-toggle">
-                                <i class="menu-icon fa fa-caret-right"></i>
-                                台海寻亲
-                            </a>
-                            <b class="arrow"></b>
+                                @Html.ActionLink("已退案例", "ReturnCase", "Index")
                         </li>
                     </ul>
                 </li>

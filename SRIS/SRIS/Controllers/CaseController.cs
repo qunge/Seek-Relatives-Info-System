@@ -340,6 +340,11 @@ namespace SRIS.Controllers
             }
         }
 
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="Id">要删除任务的ID</param>
+        /// <returns></returns>
         [HttpPost]
         public JsonResult DelRegisterInfo(string Id)
         {
@@ -360,6 +365,27 @@ namespace SRIS.Controllers
                 obj = new { state = false, message = e.Message };
             }
             return Json(obj);
+        }
+
+        public JsonResult ydbbhj(string id)
+        {
+            var obj = new { state=false,message=""};
+            if (!string.IsNullOrEmpty(id))
+            {
+                if (IRegisterInfo.Bbhj(id))
+                {
+                    obj = new { state = true, message = "设置为宝贝回家案例成功" };
+                }
+                else
+                {
+                    obj = new { state = false, message = "设置为宝贝回家案例失败" };
+                }
+            }
+            else
+            {
+                obj = new { state = false, message = "案例编号不能为空" };
+            }
+           return Json(obj);
         }
 
     }

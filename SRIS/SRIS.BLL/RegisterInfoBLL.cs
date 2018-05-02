@@ -24,7 +24,7 @@ namespace SRIS.BLL
             using (var db = new SRISContext())
             {
                 List<RegisterInfo> list = db.RegisterInfos
-                    .Where(n => n.UserInfo.UserInfoID == userId&&n.IsReturnTask==0&&n.IsBBHJ=="0"&&n.IsDelete==0)
+                    .Where(n => n.UserInfo.UserInfoID == userId&&n.IsReturnTask==0&&n.IsBBHJ=="0"&&n.IsDelete==0&&n.IsSuccess==0)
                     .Include(t=>t.SRType)
                     .OrderByDescending(s=>s.GetTaskDateTime)
                     .ToList();
@@ -220,6 +220,22 @@ namespace SRIS.BLL
             {
                 RegisterInfo model = db.RegisterInfos.Find(id);
                 model.IsDelete = 1;
+                db.SaveChanges();
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// 设置为宝贝回家案例
+        /// </summary>
+        /// <param name="id">要设置的案例ID</param>
+        /// <returns></returns>
+        public bool Bbhj(string id)
+        {
+            using (var db = new SRISContext())
+            {
+                RegisterInfo model = db.RegisterInfos.Find(id);
+                model.IsBBHJ = "1";
                 db.SaveChanges();
                 return true;
             }

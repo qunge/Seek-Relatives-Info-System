@@ -79,5 +79,12 @@ namespace SRIS.SPI
         /// <param name="id">案例登记ID</param>
         /// <returns></returns>
         bool DelRegisterInfo(string id);
+
+        /// <summary>
+        /// 设置为宝贝回家案例
+        /// </summary>
+        /// <param name="id">要设置的案例ID</param>
+        /// <returns></returns>
+        bool Bbhj(string id);
     }
 }

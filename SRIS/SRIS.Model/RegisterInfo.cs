@@ -98,6 +98,12 @@ namespace SRIS.Model
         public DateTime CreateDateTime { get; set; }
 
         /// <summary>
+        /// 是否为成功案例（0：未成功    1：已成功）
+        /// </summary>
+        [DefaultValue(0)]
+        public int IsSuccess { get; set; }
+
+        /// <summary>
         /// 跟进志愿者
         ///// </summary>
         [Required]
