@@ -759,13 +759,15 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\1BBHJCaseController.cs" />
+    <Compile Include="Controllers\BBHJCaseController.cs" />
     <Compile Include="Controllers\CaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReturnCaseController.cs" />
     <Compile Include="Controllers\SuccessCaseController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\BBHJModel.cs" />
     <Compile Include="ViewModels\LinkMan.cs" />
     <Compile Include="ViewModels\MessageModel.cs" />
     <Compile Include="ViewModels\RegisterCaseInfo.cs" />

@@ -234,10 +234,35 @@ namespace SRIS.BLL
         {
             using (var db = new SRISContext())
             {
-                RegisterInfo model = db.RegisterInfos.Find(id);
-                model.IsBBHJ = "1";
-                db.SaveChanges();
-                return true;
+                var tran = db.Database.BeginTransaction();
+                try
+                {
+                    // 修改案例状态为宝贝回家案例
+                    RegisterInfo model = db.RegisterInfos.Find(id);
+                    model.IsBBHJ = "1";
+
+                    // 宝贝回家表添加数据
+                    BBHJInfo bbModel = new BBHJInfo() {
+                        BBHJCode="",
+                        BBHJInfoID=System.Guid.NewGuid().ToString(),
+                        CreateDateTime=DateTime.Now,
+                        GuideTime=DateTime.Now,
+                        RegisterInfoID=id,
+                        Remark="",
+                        Volunteer=""
+                    };
+                    db.BBHJInfos.Add(bbModel);
+
+                    db.SaveChanges();
+                    tran.Commit();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    tran.Rollback();
+                    return false;
+                }
+                
             }
         }
 

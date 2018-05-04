@@ -23,12 +23,13 @@ namespace SRIS.Model
         /// <summary>
         /// 登记案例
         /// </summary>
+        [Required]
+        [ForeignKey("RegisterInfo")]
         public string RegisterInfoID { get; set; }
 
         /// <summary>
         /// 宝贝回家登记编号
         /// </summary>
-        [Required]
         [StringLength(20)]
         public string BBHJCode { get; set; }
 

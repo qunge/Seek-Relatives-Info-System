@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace SRIS.Controllers
 {
-    public class BBHJCaseController:Controller
+    public class ReturnCaseController:Controller
     {
         public ActionResult Index()
         {

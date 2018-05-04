@@ -77,6 +77,14 @@
     <Compile Include="Migrations\201805020647414_addydbbhj.Designer.cs">
       <DependentUpon>201805020647414_addydbbhj.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805030741027_asd.cs" />
+    <Compile Include="Migrations\201805030741027_asd.Designer.cs">
+      <DependentUpon>201805030741027_asd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805040622050_glbbhj.cs" />
+    <Compile Include="Migrations\201805040622050_glbbhj.Designer.cs">
+      <DependentUpon>201805040622050_glbbhj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SRISContext.cs" />
@@ -100,6 +108,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805020647414_addydbbhj.resx">
       <DependentUpon>201805020647414_addydbbhj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805030741027_asd.resx">
+      <DependentUpon>201805030741027_asd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805040622050_glbbhj.resx">
+      <DependentUpon>201805040622050_glbbhj.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

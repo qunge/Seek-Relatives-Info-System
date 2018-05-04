@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SRIS.Model</name>
+    </assembly>
+    <members>
+        <member name="T:SRIS.Model.BBHJInfo">
+            <summary>
+            宝贝回家信息
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.BBHJInfo.BBHJInfoID">
+            <summary>
+            宝贝回家信息ID
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.BBHJInfo.RegisterInfoID">
+            <summary>
+            登记案例
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.BBHJInfo.BBHJCode">
+            <summary>
+            宝贝回家登记编号
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.BBHJInfo.Volunteer">
+            <summary>
+            跟进志愿者
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.BBHJInfo.GuideTime">
+            <summary>
+            引导时间
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.BBHJInfo.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.BBHJInfo.CreateDateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.BBHJInfo.RegisterInfo">
+            <summary>
+            案例登记信息
+            </summary>
+        </member>
+        <member name="T:SRIS.Model.LinkMan">
+            <summary>
+            联系人表
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.LinkManID">
+            <summary>
+            联系人ID
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.LinkManName">
+            <summary>
+            联系人姓名
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.Sex">
+            <summary>
+            性别(0:空，1：男，2：女)
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.Birthday">
+            <summary>
+            出生日期
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.Relationship">
+            <summary>
+            与被寻人关系
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.IdCardNo">
+            <summary>
+            身份证号码
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.Career">
+            <summary>
+            职业
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.Address">
+            <summary>
+            联系人地址
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.Phone">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.TelPhone">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.QQ">
+            <summary>
+            QQ
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.WeiXin">
+            <summary>
+            微信
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.Email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.OtherLink">
+            <summary>
+            其他联系方式
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.RegisterInfoId">
+            <summary>
+            登记案例信息
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.RegisterInfo">
+            <summary>
+            案例登记信息
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.LinkMan.CreateDateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:SRIS.Model.RegisterInfo">
+            <summary>
+            案例登记信息
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.RegisterInfoID">
+            <summary>
+            案例登记信息ID
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.CaseCode">
+            <summary>
+            案例编号
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.Title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.BeSeekerName">
+            <summary>
+            被寻人姓名
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.GetTaskDateTime">
+            <summary>
+            领任务时间
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.RegisterLink">
+            <summary>
+            登记链接
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.PostLink">
+            <summary>
+            发帖链接
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.DNAState">
+            <summary>
+            DNA状态(0:未采血)
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.IsReturnTask">
+            <summary>
+            是否退任务(0:未退任务，1：已退任务)
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.ReturnTaskDateTime">
+            <summary>
+            退任务时间
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.ReturnReason">
+            <summary>
+            退任务原因
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.IsBBHJ">
+            <summary>
+            是否引导去宝贝回家登记
+            </summary>]
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.IsDelete">
+            <summary>
+            是否删除（0：未删除  1：已删除）
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.CreateDateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.IsSuccess">
+            <summary>
+            是否为成功案例（0：未成功    1：已成功）
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:SRIS.Model.RegisterInfo.UserInfoID" -->
+        <member name="P:SRIS.Model.RegisterInfo.SRTypeID">
+            <summary>
+            寻亲类别
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.UserInfo">
+            <summary>
+            志愿者
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.LinkMan">
+            <summary>
+            联系人信息
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.RegisterInfo.SRType">
+            <summary>
+            寻亲类别
+            </summary>
+        </member>
+        <member name="T:SRIS.Model.SRType">
+            <summary>
+            寻亲类别
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.SRType.SRTypeID">
+            <summary>
+            寻亲类别ID
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.SRType.SRTypeName">
+            <summary>
+            寻亲类别名称
+            </summary>
+        </member>
+        <member name="T:SRIS.Model.UserInfo">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.UserInfo.UserInfoID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.UserInfo.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.UserInfo.PassWord">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.UserInfo.Salt">
+            <summary>
+            盐值
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.UserInfo.CreateDateTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:SRIS.Model.UserInfo.RegisterInfo">
+            <summary>
+            志愿者跟进的案例
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -374,11 +374,11 @@ namespace SRIS.Controllers
             {
                 if (IRegisterInfo.Bbhj(id))
                 {
-                    obj = new { state = true, message = "设置为宝贝回家案例成功" };
+                    obj = new { state = true, message = "设置成功" };
                 }
                 else
                 {
-                    obj = new { state = false, message = "设置为宝贝回家案例失败" };
+                    obj = new { state = false, message = "设置失败" };
                 }
             }
             else
