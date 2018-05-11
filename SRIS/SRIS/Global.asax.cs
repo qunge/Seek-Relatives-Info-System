@@ -13,6 +13,8 @@ namespace SRIS
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            // 初始化Log4Net的相关配置
+            MyFrameworkConfig.Register();
         }
     }
 }
