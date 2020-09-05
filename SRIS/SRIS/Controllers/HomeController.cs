@@ -12,5 +12,9 @@ namespace SRIS.Controllers
         {
             return View();
         }
+        public ActionResult ss()
+        {
+            return View();
+        }
     }
 }

@@ -20,6 +20,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -785,6 +786,7 @@
     <Content Include="Views\Case\EditCase.cshtml" />
     <Content Include="Views\Case\EditLinManInfo.cshtml" />
     <Content Include="Views\Case\ReturnTask.cshtml" />
+    <Content Include="Views\Home\ss.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
